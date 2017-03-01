@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 难点
+			 * 
+			 * 十进制   0 1 2 3 4 5 6 7 8 9 
+			 * 二进制   0 1
+			 * 十六进制 0 1 2 3 4 5 6 7 8 9 A B C D E F
+			 * 八进制   0 1 2 3 4 5 6 7 
+			 * 
+			 * 1234  4*10^0 + 3*10^1 + 2*10^2 + 1*10^3
+			 * 0101  1*2^0 + 0*2^1 + 1*2^2 + 0*2^3
+			 * 0x11DF 15*16^0 + 13*16^1 + 1*16^2 + 1*16^3
+			 * 0111
+			 * 
+			 * 十六进制和二进制的转化
+			 * 0x11DF 
+			 * 0001 0001 1101 1111
+			 * 
+			 */
+			
+			//位运算1：移位
+//			var a = 4;//0100
+//			var b =  a<<1;//1000
+//			console.log(b)
+//			
+//			var a = 4;//0100
+//			var b =  a>>1;//0010
+//			console.log(b)
+			
+			//位运算2：&(AND) | (OR) 
+			var a = 9;//1001
+			var b = 5;//0101
+			var result = a & b //0001
+			console.log(result)
+			
+			var a = 9;//1001
+			var b = 5;//0101
+			var result = a | b //1101
+			console.log(result)
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

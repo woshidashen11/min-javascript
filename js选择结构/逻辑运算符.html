@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 逻辑运算符
+			 * && 与（且，并）
+			 * || 或
+			 * ！非（取反）
+			 * 
+			 */
+			
+			//逻辑与：只要有一个条件是false，则返回false（假），只有全部为true（真），才能返回真
+//			var flag1 = false
+//			var flag2 = false
+//			var flag3 = true
+//			
+//			console.log((flag1 && flag2 && flag3))//false
+			
+			//了解特殊用法：
+			//逻辑与表达式是逐个判断，当发现false（假），则立刻返回false，否则返回最后的一个值
+//			var result = 5 && 10 && 'ok' && 'no'
+//			console.log(result)
+
+			//逻辑或：只有有一个条件为true（真），则返回true，只有全部为false（假），才会返回false
+//			var flag1 = false
+//			var flag2 = false
+//			var flag3 = true
+//			
+//			console.log((flag1 || flag2 || flag3))
+//			
+			//逐个判断，一旦返现true，则返回true的值，否则返回false
+			var result = 'hello' || 'happy' || 'ok'
+			console.log(result)
+	
+			console.log(!0);//true
+			console.log(!false);//true
+			console.log(!1);//false
+			console.log(!2);//false
+			console.log(!'');//true
+			console.log(!'a');//false
+			console.log(!NaN)//true
+			console.log(!undefined)//true
+			console.log(!null)//true
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

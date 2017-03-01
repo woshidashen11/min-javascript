@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 关系运算符
+			 * ==
+			 * !=
+			 * >
+			 * <
+			 * >=
+			 * <=
+			 * ===
+			 * !==
+			 * 
+			 */
+			
+//			var a = 10;
+//			var b = 12;
+//			//表达式返回布尔类型的结果
+//			var result = (a == b)
+//			console.log(result)//false
+//			
+//			var result = (a != b)
+//			console.log(result)//true
+//			
+//			var result = (a > b)
+//			console.log(result)//false
+//			
+//			var result = (a < b)
+//			console.log(result)//true
+//			
+//			var result = (a >= b)
+//			console.log(result)//false
+//			
+//			var result = (a <= b)
+//			console.log(result)//true
+			
+			//疑问：==和===的区别（!=和!==）
+			
+			//ASCII码概念
+			//把字符串转换成对于的ASCII码值进行比较
+			//注意：仅限于字符之间进行比较
+//			var result = ('a' < 'C')
+//			console.log(result)//false
+//			
+//			//逐个字符进行比较，一旦分出大小，就停止比较
+//			var result = ('bbcd' < 'abcf')
+//			console.log(result)//false
+//			
+//			var result = ('89' < 90)
+//			console.log(result)//true
+//			
+//			//以下比较没有意义
+//			var result = ('abc' == 90)
+//			console.log(result)//false
+			
+			//===表示不单只比较数值，而且还比较类型
+//			var result = ("22" === 22)
+//			console.log(result)//false
+//			
+//			//只要数值或者类型不相等就成立
+//			var result = ("22" !== 22)
+//			console.log(result)//true
+			
+//			var result = (true > 1.2)
+//			console.log(result)
+//			
+//			//特殊（死记硬背）：NaN不和任何数字相等，包括它自己
+			var result = (NaN == NaN)
+			console.log(result)
+
+			var result = (NaN == undefined)
+			console.log(result)
+			
+			var result = (NaN == null)
+			console.log(result)
+			
+			var result = (null === null)
+			console.log(result) 
+			
+		</script>
+	</head>
+	<body>
+		<!--&#字符的ASCII码值;-->
+		<p>&#64;</p>
+	</body>
+</html>

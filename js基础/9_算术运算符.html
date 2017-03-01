@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>算术运算符</title>
+    <script>
+        //+ 加
+        // - 减
+        // * 乘
+        // / 除
+        // % 取余(取模)
+        var cup1 = 123;
+        var cup2 = 456;
+        console.log(cup1 + cup2); // 579
+
+        //如果是两个字符串相加或者其中一个是字符串的时候相加 就是字符串拼接
+        var cup1 = "123";
+        var cup2 = "456";
+        console.log(cup1 + cup2);// 123456
+        var cup1 = 123;
+        var cup2 = "456";
+        console.log(cup1 + cup2);// 123456
+        var cup1 = "123";
+        var cup2 = "456";
+        //字符串相减 自动转换成number 然后进行相减
+        console.log(cup1 - cup2);//-333
+        var cup1 = "abcd";
+        var cup2 = "456";
+        console.log(cup1 - cup2);//NaN
+
+        var cup1 = "123";
+        var cup2 = "456";
+        console.log(cup1 * cup2);// 56088
+
+        var cup1 = "123";
+        var cup2 = "456";
+        console.log(cup1 / cup2); //0.26973684210526316
+
+        var cup1 = "123abc";
+        var cup2 = "456";
+        console.log(cup1 / cup2);// NaN
+
+        var cup1 = "123";
+        var cup2 = "456";
+        console.log(cup1 % cup2); // 123
+
+
+        var s=10000;
+        var i=1;
+        // 500*50=25000;
+        // 10000+25000= 35000;
+        while(i<=50)
+        {
+            s=10000+500*(i-1);
+            console.log(s);
+            i++;
+        }
+        alert(s);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

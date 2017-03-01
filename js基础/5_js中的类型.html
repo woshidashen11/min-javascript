@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js 中的数据类型</title>
+    <script>
+        //String 字符串数据类型 带双引号 或者单引号
+        //typeof 判断变量的数据类型
+        var cup ="酒";
+        console.log(typeof cup);//string
+        //cup='水";
+        // Number 数值类型
+        cup = 23;
+        console.log(typeof cup);
+        // boolean 布尔类型
+        // 它只有两个值 true, false
+        cup = false;
+        console.log(typeof cup);
+        //ps:任何非0 的情况下都是true
+        //0 就会返回false
+        //类型转换
+        cup = -3;
+        cup = 0;
+        cup = "水";
+        console.log(typeof Boolean(cup));
+        console.log(Boolean(cup));
+        console.log(cup);
+        //Object 对象类型
+        var obj = new Object();
+        console.log(typeof obj);
+
+        // null
+        var cup = null;
+        console.log(typeof cup);//object 它是对象的空指针
+
+        // undefined
+        var cup = undefined;
+        console.log(typeof cup); // undefined
+
+        var cup; // 变量没有初始化(在定义变量的时候没有给一个值)的情况下 也会返回undefined  并且类型也是undefined类型
+        console.log(cup);
+        console.log(typeof cup);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

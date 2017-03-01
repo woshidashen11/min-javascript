@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js文件引入式</title>
+    <!--这里 当你引入了js 文件的时候 就不要在script包裹js代码了-->
+    <!--因为它不会执行-->
+    <!--ps: 就算你是使用引入js 文件式的方式 也需要结束script标签-->
+    <script>
+        alert("内联式");
+    </script>
+    <script src="project.js">
+        //alert("内联式");// 这里不会执行
+    </script>
+</head>
+<body>
+
+</body>
+</html>

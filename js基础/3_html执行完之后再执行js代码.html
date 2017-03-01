@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html 执行完之后执行js代码</title>
+    <script>
+        //alert("提示框");
+//        onload  表示当html 执行完之后再执行里面的js代码
+        onload = function(){
+            var div_ele = document.getElementsByTagName("div")[0];
+            div_ele.style.backgroundColor = "green";
+        }
+    </script>
+</head>
+<body>
+<div style="width: 200px;height: 100px;background-color:red;">
+    我要学习js 课程了
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型的转换</title>
+    <script>
+        //String
+        //把String 转换成number 类型
+        // NaN  not a number
+        var cup = "abc";
+        cup = "123";
+        cup ="123abc";
+        // 这里转换成number 的时候 必须都是数字 如果有其它的字符 是不能进行转换的 NaN
+        console.log(Number(cup));
+        console.log(typeof Number(cup));
+        //把string 转换成布尔类型
+        console.log(Boolean(cup));// true
+        console.log(typeof Boolean(cup));// boolean
+        console.log(Number(cup));
+        //Number 转换
+        //把number 类型转换成string
+        var cup = 123;
+        console.log(String(cup));// 123
+        console.log(typeof String(cup));// string
+        //把number 转换成布尔类型
+        console.log(Boolean(cup));// true
+        console.log(typeof Boolean(cup));// boolean
+
+        cup = 0;
+        console.log(Boolean(cup));// false
+        // 数据类型的转换   任何非0 的情况都会返回true 0 返回false
+
+        //把布尔类型转换number 类型
+        cup = false;
+        console.log(Number(cup));// 0
+        cup = true;
+        console.log(Number(cup));// 1
+        //把布尔类型转换成String 类型
+        console.log(String(cup));
+        console.log(typeof String(cup));
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

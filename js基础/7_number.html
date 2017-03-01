@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>number</title>
+    <script>
+        // 整型 和 浮点型
+        var cup = 123; // 整型
+        cup = 1.23;// 浮点型
+
+        //把字符串转换成整型 和 浮点型
+        var cup = "123";
+        console.log(Number(cup));
+        console.log(parseInt(cup));
+        cup = "123.123";
+
+        console.log(parseFloat(cup));
+        cup = "678abc1234";
+        console.log(Number(cup));
+        // 当一个变量是字符串的时候并且它的值既有数字也有字符的时候parseInt() 会取到数字
+        // 如果最开始不是数字 就会返回NaN  如果是 就会返回数字
+        // 如果字符串前面是数字后面接的是字符然后再接数字的时候 只会返回字符前面的数字
+        console.log(parseInt(cup));
+
+        cup = "123.45abc";
+        console.log(parseFloat(cup));// 123.45
+        cup = "abc2.34";
+        console.log(parseFloat(cup));// NaN
+        cup = "2.34abc3.14";
+        console.log(parseFloat(cup));// 2.34
+
+        //number 里有 最大值和最小值
+        //e 科学计数法
+        // 1.7976931348623157e+308
+        console.log(Number.MAX_VALUE);
+        // 5e-324
+        console.log(Number.MIN_VALUE);
+        cup = 12345e2;
+        console.log(cup); //Infinity
+        // 是否是一个有限数值
+        console.log(isFinite(cup));
+
+        //isNaN() // 判断是否为非数字
+
+        cup = "123"; // is not a number
+        console.log(typeof String(cup))
+        console.log(isNaN(cup));
+
+        cup = 123;
+
+        console.log(isNaN(cup));
+
+        cup="abc123";
+        console.log(isNaN(cup));// true
+
+        // 进制转换用 toString
+        cup = 30;
+        console.log(cup.toString(2));
+        console.log(cup.toString(8));
+        console.log(cup.toString(16));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

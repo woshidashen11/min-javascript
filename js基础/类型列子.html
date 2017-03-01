@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类型列子</title>
+</head>
+<body>
+<!--<input type="text">
+<input type="text">
+<input type="button" value="提交">
+<script>
+
+    var input_ele = document.getElementsByTagName("input")[0];
+    var input_ele2 = document.getElementsByTagName("input")[1];
+    var input_button = document.getElementsByTagName("input")[2];
+    input_button.onclick = function(){
+        console.log(parseInt(input_ele.value) + parseInt(input_ele2.value));
+        console.log(typeof input_ele.value);
+    }
+</script>-->
+
+<input type="text" />
+<input type="text" />
+<input type="button" value="计算" />
+<script>
+	  onload = function(){
+	  	 var input1 = document.getElementsByTagName("input")[0];
+	  	 var input2 = document.getElementsByTagName("input")[1];
+	  	 var input3 = document.getElementsByTagName("input")[2];
+	  	 input3.onclick = function(){
+	  	 	console.log(input1.value-input2.value);
+	  	 }
+	  	 
+	  }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <!--js 代码所放的位置-->
+    <!--浏览器在解析html文件的时候 是从上往下开始-->
+    <!--js 代码所放的位置不同的时候 其作用是不一样的（对dom 进行操作的时候）-->
+    <!--JavaScript  分为三个部分-->
+    <!--js 语法 ECMAscript -->
+    <!--BOM 浏览器对象模型 -->
+    <!--DOM 文本对象模型 -->
+    <script>
+        //alert("提示框");
+        var div_ele = document.getElementsByTagName("div")[0];
+        div_ele.style.backgroundColor = "green";
+    </script>
+</head>
+<body>
+<!--<script>-->
+    <!--alert("我在body里面");-->
+<!--</script>-->
+<div style="width: 200px;height: 100px;background-color:red;">
+    我要学习js 课程了
+    <!--<script>-->
+        <!--alert("我在div 里面");-->
+    <!--</script>-->
+</div>
+<!--ps： js 代码可以放在任意的标签当中 但是 每段js代码都必须使用script 标签进行包裹-->
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * for (表达式1;表达式2;表达式3){
+			 * 	
+			 * }
+			 * 
+			 * //循环流程
+			 * //注意表达式1在整个循环当中只执行一次
+			 * 1、表示1先执行，执行表达式2，如果返回的结果为真，则执行循环体，循环体执行完毕在执行表达式3
+			 * 2、             执行表达式2，如果返回的结果为真，则执行循环体，循环体执行完毕在执行表达式3
+			 * 3、             执行表达式2，如果返回的结果为真，则执行循环体，循环体执行完毕在执行表达式3
+			 * 4、             执行表达式2，如果返回的结果为真，则执行循环体，循环体执行完毕在执行表达式3
+			 * 4、             执行表达式2，如果返回的结果为假，退出循环
+			 */
+			 
+			
+			//1.求1～100之和
+			/*
+			var i = 1;//表达式1
+			while(i <= 100){//表达式2
+				
+				
+				i++;//表达式3
+			}*/
+			
+			//三个表达式缺一不可
+//			var sum = 0;
+//			for(var i = 1;i <= 100;i++){
+//				
+//				sum += i;
+//			}
+//			console.log(sum)
+			//10!= 10*9*8*7*6*5*4*3*2*1
+//			var sum = 1;
+//			for(var num = 10;num >=1;num--){
+//				
+//				sum *= num;
+//				
+//			}
+//			console.log(sum)
+
+			//打印图形一
+//			for(var i = 0;i < 4;i++){
+//				
+//				for(var j = 0; j<=i; j++){
+//					
+//					document.write('*')
+//				}
+//				document.write('</br>')
+//			}
+
+//          for (i=0;i<4;i++){
+//          	for (j=0;j<=i;j++){
+//          		document.write("*")
+//          	}
+//          	document.write("<br />")
+//          }
+//			document.write("<br />")
+//			for (i=0;i<4;i++){
+//				
+//				for (j=i;j>0;j--){
+//					document.write("&ensp;");
+//				};
+//				for (j=4-i;j>0;j--){
+//					document.write ("*")
+//				}
+//				document.write("<br />")
+//			}
+//       document.write("<br />")
+         
+//       for (i=0;i<4;i++){
+//       	for (j=0;j<4-i;j++){
+//       		document.write("&ensp;");
+//       	}
+//       	for (k=0;k<=i;k++){
+//       		document.write("*");
+//       	} document.write("<br />")
+//       }
+         
+//			//打印图形二（解法一）
+//			for(var row = 4;row > 0;row--){
+//				
+//				for(var line = 1;line < 5; line++){
+//					
+//					document.write(line < row ?'&ensp;':'*');
+//					
+//				}
+//				document.write('</br>')
+//			}
+
+			//解法二
+			//最外层是控制行数
+//			for(var i = 1; i < 5;i++){
+//				
+//				//此循环用于打印空格
+//				for(var j = 1; j < 5 - i;j++){
+//					
+//					document.write('&ensp;');
+//				}
+//				
+//				//打"*"
+//				for(var k = 1; k <= i; k++ ){
+//					
+//					document.write('*');
+//				}
+//				
+//				document.write('</br>')
+//			}
+			
+
+		
+		//求1!+2!+3!+4!+5!
+			//记录总和的值
+			/*
+			 * 当i=1，tempSum *= j -》 1 * 1
+			 * 当i=2，tempSum *= j -》 1 * 1 * 2
+			 * 当i=3，tempSum *= j -》 1 * 1 * 2 * 3
+			 * 当i=4，tempSum *= j -》 1 * 1 * 2 * 3 *４
+			 * 当i=5，tempSum *= j -》 1 * 1 * 2 * 3 * 4 * 5
+			 * */
+//			var totalSum = 0;
+//			for(var i = 1;i <=5 ;i ++){
+//				
+//				//记录每一个阶层的乘积的值
+//				var tempSum = 1;
+//				for(var j = 1; j<= i;j++){
+//					
+//					tempSum *= j;
+//					
+//				}
+//				totalSum += tempSum;
+//				
+//			}
+//			console.log(totalSum);
+			
+			
+			//6
+//			var  salary = 7000;
+//			for(var year = 1; year <= 20;year++){
+//				
+//				salary = salary * (1 + 0.05);
+//				
+//			}
+//			console.log(salary)
+//			
+//			//7挑水
+//			var count = 0;
+//			for(var water = 15;water < 50; water += 5){
+//				count++;
+//				
+//			}
+//			console.log(count);
+//		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

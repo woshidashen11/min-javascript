@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			//第一题
+//			var year = 2017;
+//			var month = 4;
+//			var day = 3;
+//			
+//			//记录总共天数的变量
+//			var totalDay = 0;
+//			
+//			if(month > 1){
+//				//加上1月份的31天
+//				totalDay += 31;
+//			}
+//			
+//			if(month > 2){
+//				//判断是否为闰年
+//				if(year % 4 == 0 && year % 100 !=0 || year % 400 == 0){
+//					totalDay += 29;
+//				}else{
+//					totalDay += 28;
+//				}
+//				
+//			}
+//			
+//			if(month > 3){
+//				totalDay += 31;
+//			}
+//			
+//			if(month > 4){
+//				totalDay += 30;
+//			}
+//			
+//			if(month > 5){
+//				totalDay += 31;
+//			}
+//			
+//			if(month > 6){
+//				totalDay += 30;
+//			}
+//			
+//			if(month > 7){
+//				totalDay += 31;
+//			}
+//			
+//			if(month > 8){
+//				totalDay += 31;
+//			}
+//			
+//			if(month > 9){
+//				totalDay += 30;
+//			}
+//			
+//			if(month > 10){
+//				totalDay += 31;
+//			}
+//			
+//			if(month > 11){
+//				totalDay += 30;
+//			}
+//			
+//			//算上本月天数
+//			totalDay += day;
+//			
+//			console.log(totalDay);
+
+			
+//			var salary = 10000;
+//			//算出总共超出的部分
+//			var extra = salary - 3500;
+//			
+//			if(extra <= 0){
+//				
+//				console.log('好开心，不用交税')
+//				
+//			}else if(extra < 500){
+//				//总共交的个人所得税
+//				var tax = extra * 0.05;
+//				console.log(tax);
+//			}else if(extra < 2000){
+//				var tax = extra * 0.1 - 25
+//				console.log(tax)
+//			}else if (extra < 5000){
+//				var tax = extra * 0.15 - 125
+//				console.log(tax)
+//			}
+			
+			//第三题
+			var a  = 1;//剪刀
+			var b  = 2;//石头
+			var c  = 3;//布
+			
+			//x表示甲
+			var x = 1
+			//y表示乙
+			var y = 2
+			
+			/*
+			 * 甲胜利的情况
+			 * 
+			 * x = 1 y = 3
+			 * x = 2 y = 1
+			 * x = 3 y = 2
+			 * 
+			 * 平局的情况
+			 * x = y
+			 * 
+			 * 乙胜利
+			 * 
+			 * 
+			 */
+			
+			if (x - y == 1 || x - y == -2){
+				
+				console.log('甲胜利')
+				
+			}else if (x == y){
+				
+				console.log('平局')
+				
+			}else{
+				
+				console.log('乙胜利')
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

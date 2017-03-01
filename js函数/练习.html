@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			//输出20-80被3整除的整数，每5个显示一行
+//			var row = 0;
+//			for(var i = 20;i <= 80;i++){
+//				
+//				if(i % 3 == 0){
+//					document.write(i + ',');
+//					++row;
+//					
+//					if(row % 5 == 0){
+//						document.write('<br/>');
+//					}
+//					
+//				}
+////				if(row == 5){
+////					document.write('<br/>');
+////					//重置为0 
+////					row = 0;
+////				}
+//				
+//			}
+
+//			var row = 0;
+//			for (var i = 1000; i<= 2000;i++){
+//				
+//				if(i % 4 == 0 && i % 100 !=0 || i % 400 == 0){
+//					
+//					document.write(i + ',');
+//					++row;
+//					
+//					if(row % 4 == 0 ){
+//						document.write('<br/>');
+//					}
+//				}
+//				
+//				
+//			}
+
+
+			/**
+			 * 1x1=1
+			 * 1x2=2 2x2=4
+			 * 1x3=3 2x3=6 3x3=9
+			 * ......
+			 * 
+			 */
+			
+			//99乘法表
+//			for (var i = 1;i <= 9; i++){
+//				
+//				for(var j = 1; j<=i; j++){
+//					
+//					document.write(j + '*' + i + '=' + i*j + '&ensp;');
+//				}
+//				document.write('<br/>');
+//			}
+
+			//1 * 1/1 + （-1）* 1/2 + 1 * 1/3 +(-1) * 1/4..
+			//temp = temp * temp ——》temp *= -1; 
+			//第一次 1  temp = -1 * -1
+			//第二次 -1 temp = 1 * -1
+			//第三次 1  temp = -1 * -1
+//			var temp = -1;
+//			//记录最后一个结果的总值
+//			var sum = 0;
+//			for (var i = 1; i<=100; i++){
+//				temp *= -1;
+//				sum += temp * (1/i);
+//			}			
+//			console.log(sum);
+
+//			for(var i = 100;i < 1000;i++){
+//				
+//				//求百位数字
+//				var a = parseInt(i / 100);
+//				//求十位数字
+//				//789 / 10 = 78.9
+//				var b = parseInt(i / 10) % 10;
+//				//求个位数字
+//				var c = i % 10;
+//				
+//				if(i == a*a*a + b*b*b + c*c*c){
+//					
+//					console.log(i);		
+//				}
+//				
+//			}
+			//记录总值的变量
+			/*
+			 *  第2格 = 第1格 * 2  2  = 1 * 2
+			 * 	第3格 = 第2格 * 2  4  = 2 * 2
+			 * 	第4格 = 第3格 * 2  8  = 4 * 2
+			 *  .......
+			 * 
+			 */
+			//记录总值
+			var sum = 0;
+			//记录每一个格子的数量
+			var temp = 1;
+			for (var i = 1; i <= 64; i++){
+				sum += temp;
+				//每次循环累加上一次循环值的两倍
+				temp = temp * 2;
+			}
+			
+			console.log(sum);//18446744073709552000
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

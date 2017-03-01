@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/**
+			 * 函数嵌套
+			 * 
+			 * 同级函数可以相互调用
+			 * 函数可以向外调用
+			 * 函数不能调用同级函数的嵌套函数
+			 * 
+			 */
+			
+			//流程：fn()->a()->fn1()->b()
+			function fn(){
+				
+				function a(){
+					//调用fn1?
+					fn1();
+					console.log('a');
+				}
+				a();
+				
+				function c(){
+					console.log('c');
+				}
+				
+			}
+			
+			
+			function fn1(){
+				console.log('fn1');
+				function b(){
+					console.log('b');
+				}
+				b();
+			}
+			fn();
+
+//			function fn(){
+//
+//				function a(){
+//
+//					console.log('a');
+//				}
+//
+//
+//				function c(){
+//					console.log('c');
+//				}
+//
+//				b();
+//
+//			}
+//
+//
+//			function fn1(){
+//				console.log('fn1');
+//
+//				function b(){
+//					console.log('b');
+//
+//				}
+//
+//			}
+//
+//
+//			fn();
+//
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

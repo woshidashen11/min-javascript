@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			//检测奇偶
+			function notDouble(){
+				//第一步要得到这个元素节点
+				//取得的是唯一值
+				var element = document.getElementById('number');
+				console.log(element);
+				//得到节点的数值
+				var num = element.value;
+
+				//修改元素的value值
+				//element.value = num % 2? '奇数':'偶数';
+
+				alert(num % 2? '奇数':'偶数');
+				//document.write(num % 2? '奇数':'偶数');
+
+				//document.write 如果网页已经加载完成，则会覆盖掉之前的内容
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" placeholder="请输入数字" id="number" />
+		<input type="button" value="检测" onclick="notDouble()"/>
+	</body>
+</html>

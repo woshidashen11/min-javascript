@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 函数递归
+			 * 
+			 * 
+			 */
+			
+			/*
+			 * 
+			 * 计算5的阶层
+			 * 5！= 5 * 4！
+			 * 5! = 5 * 4 * 3!
+			 * 5! = 5 * 4 * 3 * 2!
+			 * 5! = 5 * 4 * 3 * 2 * 1 
+			 * 
+			 * 
+			 */
+			//递归方式解决
+			//在使用递归的时候，一定要找到递归的出口
+			//第一次  5 *　fn(4)
+			//第二次  5 *  4 *　fn(3)
+			//第三次  5 *  4 *　3 * fn(2)
+			//第四次  5 *  4 *　3 * 2 * fn(1)
+			//第五次  5 *  4 *　3 * 2 * 1
+			
+			
+//			function fn(n){
+//				
+//				if(n == 1){
+//					return 1;
+//				}
+//				return n * fn(n - 1);
+//				
+//			}
+//			console.log(fn(5));
+
+			
+//			function fn(5){
+//				
+//			 	return	5 * fn1(4);
+//				
+//			}
+//			
+//			
+//			function fn1(4){
+//				
+//			 	return	4 * fn2(3);
+//				
+//			}
+//			
+//			function fn2(3){
+//				
+//			 	return	3 * fn3(2);
+//				
+//			}
+//			
+//			function fn3(2){
+//				
+//			 	return	2 * fn4(1);
+//				
+//			}
+//			
+//			function fn4(1){
+//				
+//			 	return	1 ;
+//				
+//			}
+//			
+//			console.log(fn(5));
+			
+//			function fn1(a){
+//				
+//				return 1;
+//			}
+//			
+//			var result = fn1(1)
+//			console.log(result);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

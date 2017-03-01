@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 1到n的和
+			 * 
+			 */
+//			function sum(n)
+//			{
+//				var totalSum = 0;
+//				   for(var i = 1; i <= n;i++)
+//				   {
+//					totalSum += i;
+//				  }
+//				return totalSum;
+//			}
+//			//注意一下写法是函数有返回值的前提下
+//			console.log(sum(15));
+
+
+
+			//计算n的阶层
+//			function multiple(n)
+//			{
+//				var sum = 1;
+//				for(var i = 1; i <=n; i++)
+//				{
+//					sum *= i;
+//				}
+//				//代表这个函数要结束了
+//				return sum;
+//				//以下代码无效
+//				console.log('haha');
+//			}
+//			console.log( multiple(10));
+
+
+//			计算两个数的最小公倍数 a b
+//			 max: a * b   min:a和b里面较大的数
+//			function fn(a,b){
+//				//知道a和b的最大值
+//				var maxNum = a > b ? a:b;
+//				for(var i = maxNum; i <= a * b; i++ ){
+//
+//					//能同时整除a和b的数就是它们的最小公倍数
+//					if(i % a ==0 && i % b == 0){
+//
+//						//注意：结束函数也会打断循环
+//						return i;
+//					}
+//				}
+//				console.log('haha') //以下代码无效
+//			}
+//			console.log(fn(13,17));
+
+			//两个数的和
+			//a和b 称之为形参
+//			function fn(a,b){//形式上的
+//				
+//				return a + b;
+//			}
+//			
+//			
+//			//fn(1,2);//1和2称之为实参
+//			//调用函数的时候提供了超出形参个数的实参
+//			//推荐：形参个数等同于实参个数
+//			console.log( fn(1,2,3,4) );
+			
+//			var a = 1;
+//			//数组是一个有序的集合
+//			//通过数组的下标访问数组元素,下标从0开始
+//			var arr = [1,2,3,4];
+//
+//			console.log(arr.length);
+//			//访问数组元素
+//			console.log(arr[2]);
+
+
+//			//得到所有的实参
+//			console.log(arguments);
+//
+//			}
+//			fn(1,2,3,4,5,6,7,8);
+//			function fn(a,b){
+
+			// 计算一个函数内部所有所提供的实参（不定值）的总和
+//			 function sum(){
+//
+//			 	//把arguments里面的所有元素累加
+//			 	var totalSum = 0;
+//			 	for(var i = 0; i < arguments.length;i++){
+//			 		totalSum += arguments[i];
+//			 		console.log('totalSum:' + totalSum);
+//			 		console.log('arguments' + '[' + i +']' +':' +arguments[i]);
+//			 	}
+//			 	return totalSum;
+//			 }
+//
+//			 console.log(sum(1,2,3,4,5,6,7));
+
+			//形参和实参是分离的，形参只是简单的得到了实参的数值
+//			function fn(a){
+//
+//				++a;
+//
+//				console.log('a:'+ a);
+//			}
+//
+//			var num = 10;
+//			fn(num);
+//			console.log('num:'+ num);
+//
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

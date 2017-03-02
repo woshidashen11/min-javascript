@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 日期 date
+			 * 
+			 * 国际标准时间：格林威治标准时间
+			 */
+			//获取当前时间
+//			var date = new Date();
+//			console.log(date);
+			
+			/*
+			 * 日期的格式可以是“2015/08/22”，
+			 * “2015-08-22”，
+			 * 或1970年当前日期的毫秒数1443453475234
+			 * 
+			 */
+			
+//			var date = new Date('2015/08/22');
+//			console.log(date);
+//			var date = new Date('2016-10-10');
+//			console.log(date);
+//			console.log(typeof(date));
+
+//			//注意：0-11 表示 1-12月份
+//			var date = new Date(2016,8,19,12,12,12);
+//			console.log(date);
+		//	时间戳 提供的时间到计算机原始时间所经历的总毫秒数
+//			var date = new Date(1443453475234);
+//			console.log(date);
+
+//			var date = new Date();
+//			console.log(date.toDateString());
+//			console.log(typeof(date.toDateString()));
+//			var date = new Date();
+//			console.log(date.toTimeString());
+//			console.log(date.toLocaleDateString());
+//			console.log(date.toLocaleTimeString());
+//			console.log(date.toUTCString());
+
+//			var date = new Date();
+//			//获取天数
+//			console.log(date.getDate());
+//			//修改天数
+//			date.setDate(18);
+//			console.log(date);
+
+
+//			var date = new Date();
+//			date.setMonth(6);
+//			console.log(date.getMonth());
+//			//0 - 11
+//			console.log(date);
+
+//         var date = new Date();
+//         date.setFullYear(2020);
+//         console.log(date.getFullYear());
+//         console.log(date.getHours())
+//         date.setHours(23);
+//         console.log(date);
+//         console.log(date.getMinutes())
+//         date.setMinutes(55);
+//         console.log(date);
+//		   console.log(date.getSeconds())
+//         date.setSeconds(55);
+//         console.log(date);
+
+			//毫秒0-999
+//		   console.log(date.getMilliseconds())
+//         date.setMilliseconds(555);
+		   console.log(date.getMilliseconds())
+//         console.log(date.getTime());
+//         console.log(date.getTimezoneOffset());
+			
+//         var date = new Date();
+//         console.log(date.getUTCDate());
+//         console.log(date.toUTCString());
+//         console.log(date.getUTCHours());
+		  
+		   
+		   //日期类直接调用：静态方法
+		   //返回距离1970年1月1日0时的毫秒数
+//		   console.log (Date.parse('2016-10-11'));
+		  // var date = new Date();
+		   //console.log(date.toString(2016,3,4,12,12,12));
+		   //2016-4-4 12:12:12
+		   //返回的是国际时间（到计算机原始时间的总毫秒数）
+		   //console.log(Date.UTC(2016,3,4,12,12,12,999))
+		   //返回的是中国时间（到计算机原始时间的总毫秒数）
+		   //console.log(date.valueOf());
+		   
+		   //1、显示当前时间 (年 月 日 时 分 秒)
+//		   var date = new Date();
+//		   var year = date.getFullYear();
+//		   var month = date.getMonth() + 1;
+//		   var day = date.getDate();
+//		   var hour = date.getHours();
+//		   var minutes = date.getMinutes();
+//		   var seconds = date.getSeconds();
+//
+//		   console.log(year + '年' + month + '月' + day + '日' + hour + '小时' + minutes +'分' + seconds + '秒')
+		   
+		   /*
+		    * 2、根据getDate()和setDate()，
+		    * 封装一个函数afterDate(date)，
+		    * 得到日期date的n天后的日期
+		    * 
+		    * 
+		    * 思路：直接在现在的时间上修改天数+n
+		    */
+		   //参数2：天数
+//		   function afterDate(n){
+//		   	 var date = new Date();
+//		   	 //获得当前月份的天数
+//		   	 var day = date.getDate();
+//		   	 //累加之后的总天数
+//		   	 date.setDate(day + n);
+//
+//		   	return date;
+//		   }
+//		   console.log(afterDate(1));
+		   
+
+
+
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

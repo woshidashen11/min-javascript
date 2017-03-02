@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 字符串
+			 * 
+			 */
+			//对象:储存在堆上
+//			var str = new String('hello');
+//			console.log(str);
+//			console.log(typeof(str));
+			
+			//基本类型:储存在栈上
+//			var str = 'world';
+//			console.log(str);
+//			console.log(typeof(str));
+			
+			//省略new：创建的是基本类型
+//			var str = String('heihei');
+//			console.log(typeof(str));
+			
+			var str = '我们都是程序猿'
+			console.log(str.length);
+
+			//通过下标获取字符串的内容
+			console.log(str[str.length - 1]);
+			//JS当中，字符串一旦确定，就不可以修改
+			str[0] = '你';
+			console.log(str);
+
+			str += '创业时代';
+			console.log(str);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

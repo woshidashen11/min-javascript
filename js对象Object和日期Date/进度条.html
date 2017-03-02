@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#progress{
+				
+				width: 20px;
+				height: 20px;
+				background-color: #F00;
+			}
+			
+		</style>
+		<script>
+			
+			//修改进度条的style
+			//写在下面函数内部的内容，在页面加载完成之后才会调用
+			onload = function(){
+				
+				//会覆盖整个文档
+				//document.write('haha');
+				var div = document.getElementById('progress');
+				//修改宽度
+				div.style.width = '100px';
+				//修改背景色
+				div.style.backgroundColor = red;
+			}
+			
+			//document.write('haha');
+		</script>
+	</head>
+	<body>
+		<div id="progress"></div>
+	</body>
+</html>

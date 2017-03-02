@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 字符串常用函数
+			 * 
+			 */
+			//获取某一个下标的字符
+//		     var str = 'abcdefg';
+//			console.log(str.charAt(3));
+			
+			//获取某一个下标字符所对应的ASCII码值
+//			console.log(str.charCodeAt(3));
+//			console.log(String.fromCharCode(97))
+			
+			//把对应的ASCII码值转换成为字符串
+			//此方法为静态方法
+//			var result = String.fromCharCode(98,99,100,101);
+//			console.log(result);
+
+			//连接字符串
+			//注意：不会修改原字符串
+//			var str = '我们热爱编程';
+//			var result = str.concat('，薪水不重要');
+//			console.log(result);
+			
+			//查找字符串
+//			var str = '我们热爱编程,我们都是技术宅';
+//			//返回的是子字符串第一次出现的下标
+//			var index = str.indexOf('我们');
+//			console.log(index);
+			
+//			var str = '我们热爱编程,我们都是技术宅';
+//			//返回的是子字符串最后一次出现的下标
+//			var lastIndex = str.lastIndexOf('我们');
+//			console.log(lastIndex);
+			
+//			var str = '我们热爱编程,我们都是技术宅';
+//			//效果：类似indexOf()
+//			var result = str.search('我们');
+//			console.log(result);
+
+//			var str = '1gtttgle';
+//			//写法一般会带上'// ',类型括号的作用
+//			//以下匹配的是以g开头，以g结尾的子字符串,中间.的数量代表任意字符的数量
+//			var result = str.search(/g...g/);
+//			console.log(result);
+			
+//			var str = 'Google';
+//			// ignore:忽略大小写
+//			var index = str.search(/g..g/i);
+//			console.log(index);
+
+			
+//			var str = 'fdsfrea143534543A';
+//			//[0-9]代表这个字符一定要是数字
+//			//类型的[a-z] [A-Z] [A-z]
+//			var result = str.search(/d[a-z]*a/i);
+//			console.log(result);
+			
+//			var str = 'hssa12435943594375935893543A';
+//			//[0-9]代表这个字符一定要是数字
+//			//*代表前面的字符可以重复多次
+//			var result = str.search(/a[0-9]*a/i);
+//			console.log(result);
+
+//			var str = 'how are you?';
+//			var result = str.replace('are','old are');
+//			console.log(result);
+
+//			var str = 'AbcdaBCD';
+//			//匹配一次
+//			var result = str.replace(/abc/i,'xxx');
+//			console.log(result);
+//			//匹配多次
+//			//g 代表全局查找
+//			var result = str.replace(/abc/gi,'xxx');
+//			console.log(result);
+//          var result = str.replace(/bc/gi,"mm");
+//          console.log(result);
+
+			/*
+			 * 1、将下面的字符串str的敏感字符*用空字符串””替换; (要正确表示*得转义成:\*) 
+			   2、将str的空格用空字符串””替换;
+			   var str = "H e  l  ** l    o    Wo r         L d  !";
+			 * 
+			 */
+//			var str = 'H e  l  ** l    o    Wo r         L d  !';
+//			//\特殊字符：转义字符
+//			var str1 = str.replace(/\*/g,'');
+//			var str2 =  str1.replace(/ /g,'');
+//			console.log(str2);
+//
+//			for(var index = 0; index < str.length;index++){
+//				
+//				var temp = str[index];
+//				
+//				if(temp == '*' || temp == ' '){
+//					
+//					str = str.replace(temp,'');
+////					消除以后，字符串下标会前移，保证同一个位置多次判断
+//					index--;
+//				}
+//				
+//			}
+//			console.log(str);
+
+			//3、随机产生一个四位数的验证码
+			//（纯数字(0-9)生成一个字符串）
+//			Math.random() 
+//			var str = '';
+//			for(var i = 0;i < 4;i++){
+//				var number = Math.floor(Math.random() * 10);
+//				str += number;
+//			}
+//			console.log(str);
+            var str = "";
+            
+            for (var i=0;i<4;i++){
+            	var t = Math.random();
+            	console.log(t);
+            	if(t<0.5){
+            		var a = parseInt(Math.floor(Math.random()*10));
+            		str+=a;
+            		console.log(a);
+            	}else if(t>=0.5&&t<0.75){
+            		var a = String.fromCharCode(Math.floor(Math.random()*26)+65);
+            		str+=a;
+            		console.log(a);
+            	}else{
+            		var a= String.fromCharCode(Math.floor(Math.random()*26)+97);
+            		str+=a;
+            		console.log(a);
+            	}
+            }
+            console.log(str);
+
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 面向过程：需要关注每一个流程
+			 * 面向对象：只需要调用各个单位配合完成工程
+			 * 
+			 * 例子：建房子
+			 * 建房子：打地基，砌墙，盖屋顶，开窗开门
+			 * 面向过程：你一个人全部搞定
+			 * 面向对象：请各种工人帮你完成
+			 * 
+			 * 
+			 * 类：是抽象的，不具有空间（内存）
+			 * 对象：是具体的，是实际占用空间的（内存）
+			 * 
+			 * 对象的属性：人举例-》头发，肤色，体重
+			 * 对象的函数：人举例-》吃饭，睡觉，赚钱
+			 * 
+			 */
+			
+			//创建一个简单对象
+			//new不要省略
+			var person = new Object();
+			console.log(person);
+			console.log(typeof(person));
+			
+			//名字
+			//等号左边的点语法和等号右边的点语法的区别
+//			person.name = '黄秀明';//给对象添加name属性，并且给属性赋值
+//			person.age = 88;//给对象添加age属性，并且给属性赋值
+//			console.log('名字叫：' + person.name +' ' +'年龄为：' + person.age);
+			
+//			//字面量方式
+//			var person = {};
+//			//推荐使用点语法
+//			person['name'] = '陈博先';
+//			console.log(person['name']);
+			
+//			var person = {'name':'温增','weight':300};
+//			console.log(person);
+		
+			//对象函数
+//			var dog = {
+//				name:'大白',
+//				age:12,
+//				//注意对象函数
+//				bark:function(){
+//
+//					return 'bark';
+//				}
+//			}
+//			console.log(dog);
+			
+
+			//不常用
+			//delete dog.bark;
+			//console.log(dog);
+			/*
+			 * 1, 创建一个人的对象, 添加属性: 姓名 年龄 爱好 薪资期望, 
+			 * 并有一个打印自身信息的方法, 可以输出自身信息;
+			 * 
+			 */
+			
+//			var person = {
+//				name:'张三',
+//				age:99,
+//				hobby:'KTV',
+//				salary:2000,
+//				print:function(){
+//					console.log('name:' + person.name + 'age：' + person.age + 'hobby:'
+//							+ person.hobby + 'salary:' + person.salary);
+//				}
+//			};
+//			person.print();
+			
+			
+			
+			/*
+			 *3, 有一辆50km/h车,跑在一条1000km路上，问多少小时跑完？
+     			对象: 
+				车Car 属性: 速度speed 50km/h
+ 	            功能: 跑在路上runOnRoad(Road)
+				路Road 属性: 长度length 1000km
+			 */
+			//面向对象有利于我们后期维护和修改代码
+			var road={
+				length:1000,
+			};
+
+			var car={
+				speed:50 ,
+				runOnRoad:function(){
+					console.log("runOnRoad="+road.length/car.speed);
+				}
+			};car.runOnRoad();
+
+
+
+
+
+
+
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

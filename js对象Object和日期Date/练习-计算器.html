@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			
+			function calculator(){
+				
+				var a = parseInt( document.getElementById('number1').value ) ;
+				var b = parseInt( document.getElementById('number2').value ) ;
+				var c = document.getElementById('icon').value;
+				var result = document.getElementById('result');
+				
+				switch(c){
+					
+					case '+': result.innerHTML = a+b;
+					break;
+					case '-': result.innerHTML = a-b;
+					break;
+					case '*': result.innerHTML = a * b;
+					break;
+					case '/': result.innerHTML = a / b;
+					break;
+					default: result.innerHTML = 'error';
+					
+				}
+				
+			}
+		
+		</script>
+	</head>
+	<body>
+		<input type="text" id="number1" />
+		<input type="text" id="icon" />
+		<input type="text" id="number2" />
+		<input type="button" onclick="calculator()"  value="计算"/>
+		<p id="result"></p>
+	</body>
+</html>

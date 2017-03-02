@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			/*
+			 * 
+			 * 2, 获取当前时间(年月日星期时分秒)并按括号内的格式打印
+			 * （*年*月*日  星期*  *：*：*）
+			 */
+			
+//			var date = new Date();
+//			
+//			var year = date.getFullYear();
+//			var month = date.getMonth() + 1;
+//			var day = date.getDate();
+//			var weekDay = date.getDay();
+//			
+//			var hour = date.getHours();
+//			var minutes = date.getMinutes();
+//			var seconds = date.getSeconds();
+//			
+//			var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+//			
+//			console.log(year + '年' + month + '月' + day + '日' + ' ' + arr[weekDay] + ' ' + hour + ':' + minutes + ':' +seconds)
+			
+			/*
+			 *4, 判断两个日期相差的天数(可先求毫秒数差,再转换成天) 
+			 * 
+			 */
+		
+//			 function distanceDay(date1,date2){
+//			 	
+//			 	//时间戳
+//			 	var second1 = date1.getTime();
+//			 	var second2 = date2.getTime();
+//
+//			
+//			 	//相差总毫秒数
+//			 	var offset =  second2 - second1;
+//			 	
+//			 	//计算天数
+//			 	return parseInt(offset / (3600000 * 24));
+//			 	
+//			 }
+//			 
+//			 var oneDate = new Date('2016-10-8'); 
+//			 var twoDate = new Date('2017-10-8'); 
+//			 console.log(distanceDay(oneDate,twoDate));
+
+			onload = function(){
+				
+				//获取content和progress节点
+				var contentNode = document.getElementById('content');
+				var progressNode = document.getElementById('progress');
+				
+				var i = 0;
+				var timer = setInterval(function(){
+					
+					i++;
+					//修改界面上的内容
+					progressNode.innerHTML = (parseInt(i / 200 * 100)) + '%';
+					//修改content的宽度
+					contentNode.style.width = i + 'px';
+					
+					if(i == 200){
+						
+						//关闭定时器
+						clearInterval(timer);
+					}
+					
+				},50);
+				
+			}
+			
+		</script>
+		<style>
+			#container{
+				
+				width: 200px;
+				height: 50px;
+				border: 2px solid #000;
+			}
+			#content{
+				
+				width: 0px;
+				height: 50px;
+				background-color: #F00;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="container">
+			<div id="content"></div>
+		</div>
+		<strong id="progress">0%</strong>
+		
+	</body>
+</html>

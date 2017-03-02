@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			var timer = null;
+			
+			function keepTime(){
+				
+				var btn = document.getElementById('btn');
+				
+				/*
+				 * 1.暂停和继续的切换
+				 * 2.修改按钮的文字
+				 */
+				if(timer != null){
+					btn.value = '开始计时';
+					clearInterval(timer);
+					timer = null;
+					return;
+				}else{
+					
+					btn.value = '暂停计时';
+					
+				}
+				
+				var hourNode = document.getElementById('hour');
+				var minuteNode = document.getElementById('minutes');
+				var secondNode = document.getElementById('seconds');
+				
+				var hour = hourNode.innerHTML;
+				var minutes = minuteNode.innerHTML;
+				var seconds = secondNode.innerHTML;
+				
+				/*
+				 * 取出现在的时间
+				 * 
+				 *//
+				var totalSeconds = hour * 3600 + minutes * 60 + seconds * 1;
+				
+				timer = setInterval(function(){
+					
+					//自加
+					++totalSeconds;
+					
+					var newHour = Math.floor(totalSeconds / 3600);
+					var newMinutes = Math.floor(totalSeconds / 60 % 60);
+					var newSeconds = totalSeconds % 60;
+					
+					//设置页面上的内容
+					hourNode.innerHTML = newHour < 10?'0'+newHour:newHour;
+					minuteNode.innerHTML = newMinutes < 10?'0'+newMinutes:newMinutes;
+					secondNode.innerHTML = newSeconds < 10?'0'+newSeconds:newSeconds;
+					
+				},10);
+				
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<span id="hour">00</span>时
+		<span id="minutes">00</span>分
+		<span id="seconds">00</span>秒
+		<input type="button" id="btn" value="开始计时" onclick="keepTime()"/>
+		
+	</body>
+</html>

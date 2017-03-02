@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+//			var str = '我们都是程序猿，我们都喜欢加班';
+//			//分割字符串
+//			//substring([startIndex,endIndex + 1))
+//			 var result = str.substring(3,8);//是程序猿，
+//			 console.log( result);
+//			//substr([startIndex,length))
+//			var result = str.substr(3,8);//是程序猿，我们都
+//			console.log(result);
+//			var str = '我们都是程序猿，我们都喜欢加班';
+//			//var str = '你我我我我我我我我你'
+//			/*
+//			 * '你'和'我你'
+//			 * '你'和''和'你'
+//			 */
+//			//分割
+////			var result = str.split('，');
+////			console.log(result);
+//		//	console.log( typeof(result));
+//			var result = str.split('我');
+//			console.log(result);//["", "都是程序猿，", "都喜欢加班"]
+
+//			var str = 'h1llo world , h2222o js';
+//			var result = str.split(/h[0-9]*o/i);
+//			console.log( result);
+			
+//			var str = 'Hello world , hELLo js';
+//			//转大写
+//			console.log(str.toUpperCase());
+//			//转小写
+//			console.log(str.toLowerCase());
+//			
+//			//去掉字符串123@zh@qq.com中的@;
+//			var str = '123@zh@qq.com';
+//			var result = str.replace(/@/g,'');
+//			console.log(result);
+//			
+//			//任意给定的一串字符，
+//			//统计字符串里面的大写字母和小写字母的个数
+//			var str = 'ABCDabcdEfggg';
+//			//记录大写字母个数
+//			var upperSum = 0;
+//			//记录小写字母个数
+//			var lowerSum = 0;
+//			
+//			for(var index in str){
+//				
+//				//判断是大写字母还是小写字母？ASCII
+//				var number = str.charCodeAt(index);
+//				if(number >= 97 && number <= 122){
+//					
+//					lowerSum++;
+//				}else if(number >= 65 && number <= 90){
+//					
+//					upperSum++;
+//				}
+//				
+//				var temp = str[index];		
+//				if(temp >= 'a' && temp <= 'z'){
+//					
+//					lowerSum++;
+//				}else if(temp >= 'A' && temp <= 'Z'){
+//					
+//					upperSum++;
+//				}
+//
+//				
+//			}
+//			
+//			console.log(lowerSum);
+//			console.log(upperSum);
+
+
+			/*
+			 * https://www.baidu.com/s?name=avery&age=20&sex=male,  
+			 * 取出name, age和sex的值
+			 * 
+			 */
+			//第一步以？切割
+			var str = 'https://www.baidu.com/s?name=avery&age=20&sex=male';
+//			var arr1 = str.split('?');
+//			console.log(arr1);
+//			var str1 = arr1[1];
+//			//第二步以&符号切割
+//			var arr2 = str1.split('&');
+//			console.log(arr2);
+//			//第三步遍历取值
+//			for(var index in arr2){
+//				var endArr = arr2[index].split('=');
+//				console.log(endArr[0] + ':' + endArr[1]);
+//			}
+            var arr1 = str.split("?");
+            var arr2 = arr1[1];
+            var arr3 = arr2.split("&");
+            for (var index in arr3){
+            	arr4 = arr3[index].split("=");
+            	console.log(arr4[1]);
+            }
+
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

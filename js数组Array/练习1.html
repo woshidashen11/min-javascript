@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			//写一个函数判断一个年份是不是闰年
+			function notCommonYear(year){
+				
+				if(year % 4 ==0 && year % 100 != 0 || year % 400 == 0 ){
+					
+					return 1;//1代表闰年
+				}else{
+					
+					return 0;//0代表平年
+				}
+				
+			}
+			
+			/**
+			 * 写一个函数判断一个数是不是素数
+			(又称质数,除了1和本身以外不再有其他数整除)
+			 */
+			
+//			function commonNumber(n){
+				
+				//素数：11 2-10 循环可以从头执行到末尾
+				//合数：10 2-9  循环中途会被打断
+//				var flag = true;//假设n是素数
+//				for(var i = 2; i< n;i++){
+//					
+//					if(n % i == 0){
+//						
+//						flag = false;//之前的假设不成立
+//						break;
+//					}
+//					
+//				}
+//							
+//				return flag?'素数':'合数';
+
+
+//				if(n == 2){
+//					
+//					return '素数';
+//				}
+//
+//				for(var i = 2; i< n;i++){
+//					
+//					if(n % i == 0){
+//						
+//						flag = false;//之前的假设不成立
+//						break;
+//					}
+//					
+//				}
+//				
+//				return i == n?'素数':'合数';
+//			
+//			}
+
+
+			function check(){
+				
+				//第一步获取三个元素节点
+				var ele1 = document.getElementById('year');
+				var ele2 = document.getElementById('month');
+				var ele3 = document.getElementById('day');
+				
+				//获取它们的值
+				var year = ele1.value;
+				var month = ele2.value;
+				var day = ele3.value;
+				
+				//判断输入的日期是否有误
+				if(year <= 0 || month <=0 || day <= 0){
+					
+					tips();
+					//结束函数
+					return;
+				}
+				
+				if(month > 12){
+					
+					tips();
+					//结束函数
+					return;
+				}
+				
+				if(month == 2){
+					
+					//判断是否为闰年
+					//这个判断是判断不符合日期条件
+					//如果是闰年并且天数多于29天或者天数多于28天
+					if(notCommonYear(year) && day > 29 || notCommonYear(year)==0 && day > 28){
+						tips();
+						return;
+					}
+					
+				}
+				
+				if(month == 1 || month == 3 || 
+					month == 5 ||month == 7 || 
+					month == 8 || month == 10 || 
+					month == 12){
+						
+						if(day > 31){
+							
+							tips();
+							return;
+							
+						}
+						
+					}
+					
+					if(month == 4 || month == 6 || month == 9 || month == 11){
+						
+						if(day > 30){
+							
+							tips();
+							return;
+							
+						}
+					}
+					
+					//全部顺利通过
+					alert('日期正确');
+						
+					
+			}
+			
+			function tips(){
+				
+				alert('输入的日期错误!');
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" id="year" placeholder="请输入年份"/>年
+		<input type="text" id="month"  placeholder="请输入月份"/>月
+		<input type="text" id="day" placeholder="请输入天数"/>日
+		<input type="button" value="检测"  onclick="check()"/>
+	</body>
+</html>

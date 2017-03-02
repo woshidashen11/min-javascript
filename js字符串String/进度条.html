@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {width: 200px;height: 40px;border: 1px solid red;}
+			#content {background:red;width:0;height: 40px;}
+		</style>
+		<script>
+			 onload = function () {
+			 	var content = document.getElementById("content");
+			 	var strong  = document.getElementById("strong");
+			 	var i = 0;
+			 	var timer = setInterval(function(){
+			 		
+			 		var a = parseInt(i/200*100)+"%";
+			 		strong.innerHTML = a ;
+			 		content.style.width = i +'px';
+			 		
+			 		if(i==200){
+			 			clearInterval(timer);
+			 		}
+			 		i++;
+			 	},50)
+			 }
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="content"></div>
+		</div>
+		<strong id="strong">0%</strong>
+	</body>
+</html>

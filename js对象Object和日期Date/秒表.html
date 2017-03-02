@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 秒表
+			 *
+			 *
+			 */
+			function keepTime(){
+				var hour = document.getElementById('hour');
+				var minutes = document.getElementById('minutes');
+				var seconds = document.getElementById('seconds');
+				//简单版本
+				var number = 0;
+				setInterval(function(){
+					number++;
+					//把number总秒数转成分和时
+					var tempHour = parseInt(number / 3600);
+					//12000 / 60 = 200.xx
+					var tempMinute = parseInt( number / 60 % 60);
+					var tempSeconds = number % 60;
+					hour.innerHTML = tempHour < 10 ? '0' + tempHour:tempHour;
+					minutes.innerHTML = tempMinute < 10 ?'0' + tempMinute:tempMinute;
+					seconds.innerHTML = tempSeconds < 10 ?'0' + tempSeconds:tempSeconds;
+				},2);
+				//附加作业：实现暂停/继续功能，倒计时要累加
+			}
+		</script>
+	</head>
+	<body>
+		<span id="hour">00</span>时
+		<span id="minutes">00</span>分
+		<span id="seconds">00</span>秒
+		<input type="button" value="开始计时" onclick="keepTime()" />	
+	</body>
+</html>

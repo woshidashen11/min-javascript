@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			onload = function(){
+
+				//元素节点
+				var boxNode = document.getElementById('box');
+//				console.log(boxNode);
+//				console.log(boxNode.nodeName);//div
+//				console.log(boxNode.nodeValue);//null
+//				console.log(boxNode.nodeType);//1
+			
+				//获取div的所有子节点(只会包含元素节点和文本节点)
+//				var arr = boxNode.childNodes;
+//				console.log(arr);
+
+//				for(var index = 0;index < arr.length;index++){
+//               	console.log('nodeName:'+ arr[index].nodeName);
+//					console.log('nodeValue:'+arr[index].nodeValue);
+//					console.log('nodeType:'+arr[index].nodeType);
+//
+//				}
+				//获取一个属性节点
+				//getAttributeNode:获取一个属性节点
+				//getAttribute:获得属性节点的值
+//				var titleNode = boxNode.getAttributeNode('title');
+//				console.log(typeof(titleNode));
+//				console.log(titleNode.nodeName);
+//				console.log(titleNode.nodeValue);
+//				console.log(titleNode.nodeType);
+//				var boxNode = document.getElementById('box');
+//				//取值的区别
+//				console.log(boxNode.innerHTML);
+//				console.log(boxNode.childNodes[0].nodeValue);
+//				//赋值的区别
+//				//boxNode.innerHTML = '<p>西西里的美丽传说</p>';
+//				boxNode.childNodes[0].nodeValue = '<p>西西里的美丽传说</p>';
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="box" title="titleValue" style="border: 1px solid #000;">
+			测试DIV
+			<em>斜体</em>
+			<strong>强调</strong>
+		</div>
+		
+	</body>
+</html>

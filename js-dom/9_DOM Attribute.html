@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			onload = function(){
+				var boxNode = document.getElementById('box');
+//				console.log(boxNode.id);
+//				console.log(boxNode.getAttribute('id'));
+				
+//				//注意class的名称
+//				console.log(boxNode.className);
+//				console.log(boxNode.getAttribute('class'));
+////
+//				//自定义属性值需要通过getAttribute此方法获取
+//				console.log(boxNode.ccc);
+//				console.log(boxNode.getAttribute('ccc'));
+//
+//				//添加属性
+//				boxNode.setAttribute('align','center');
+//				//覆盖属性
+//				boxNode.setAttribute('ccc','CCC');
+//				console.log(boxNode.getAttribute('ccc'));
+//
+				boxNode.setAttribute("style",'width: 200px; height: 200px;background: orange;');
+//				//移除属性
+				boxNode.removeAttribute('title');
+				console.log(boxNode.getAttribute('title'));
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div  id="box" title="title" class="pox" ccc='ccc' alt="kk"
+			style="width: 100px; height: 100px;background: red;">
+		釜山行
+		</div>
+	</body>
+</html>

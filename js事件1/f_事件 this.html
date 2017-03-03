@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<script type="text/javascript">
+			onload = function() {
+				var inputArr = document.getElementsByTagName('input');
+				for(var i = 0; i < inputArr.length; i++) {
+
+					// * 以下分析的出发点：元素节点
+					//添加一个属性节点保存i的值
+					inputArr[i].setAttribute('index',i + 1);
+					//绑定事件
+					inputArr[i].onclick = function() {
+						//通过this获取到触发次事件的对象
+						console.log(this.getAttribute('index'));
+					};
+					//以下分析出发点：对象
+					//元素节点实际就是object
+					//给object添加属性
+					inputArr[i].index = i + 1;
+					//绑定事件
+					inputArr[i].onclick = function() {
+						console.log(this.index);
+					}
+				}
+			};
+			//全局函数
+			//注意：直接调用全局函数，this打印的是window对象
+//			function test(){
+//				console.log(this);
+		//	}
+//			test();
+
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="点击事件1" />
+		<input type="button" value="点击事件2" />
+		<input type="button" value="点击事件3" />
+	</body>
+
+</html>

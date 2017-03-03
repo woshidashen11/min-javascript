@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			function nSelect(n){
+				
+				var inputNode = document.getElementsByTagName('input');
+				var contentNode = document.getElementById('content');
+				if(n == 1){
+					
+					inputNode[0].style.background = 'orange';
+					inputNode[1].style.background = 'lightgray';
+					contentNode.innerHTML = '科技科技科技科技科技科技科技科技'
+					
+				}else{
+					inputNode[0].style.background = 'lightgray';
+					inputNode[1].style.background = 'orange';
+					contentNode.innerHTML = '探索探索探索探索探索';
+				}
+			}
+		</script>
+		<style>
+			#nav{
+				
+				background: lightgray;
+				height: 50px;
+			}
+			#content{
+				border: 2px solid #F00;
+				height: 300px;
+			}
+			input{
+				width: 100px;
+				height: 50px;
+				float: left;
+				border: none;
+			}
+			#tec{
+				background: orange;
+			}
+			#discover{
+				background: lightgray;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="nav">
+			<input type="button" value="科技" id="tec" onclick="nSelect(1)"/>
+			<input type="button" value="探索" id="discover" onclick="nSelect(2)"/>
+		</div>
+		<div id="content">
+			科技科技科技科技科技科技科技科技
+			
+		</div>
+
+	</body>
+</html>

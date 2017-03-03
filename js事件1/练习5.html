@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        有一个红色的div块
+//        1, 如果我按下ctrl+c变换颜色
+//        2, 如果我按下ctrl + shift + r 重置颜色,恢复初始颜色
+//        3, 如果我按下向上箭头,向上移动, 同理还可以向下,左,右移动
+//        4, 如果我按下ctrl + 上下左右,走的步数变大
+           onload=function(){
+              onkeydown=function (evt){
+               var oEvent=evt||event;
+                  var boxNode=document.getElementById('box')[0];
+               if(oEvent.ctrlKey&&oEvent.keyCode==67){
+                  boxNode.style.background='yellow';
+                   console.log('hehe')
+
+               }else if(oEvent.ctrlKey&&oEvent.shiftKey&&oEvent.keyCode==82){
+                   boxNode.style.background = 'red';
+
+               }
+           };
+            //   onkeydown=function (evt){
+//                   var oEvent=evt||event;
+//                   var boxNode=document.getElementById('box')[0];
+//                   switch (oEvent.keyCode){
+//                       case 38:boxNode.style.top=parseInt(boxNode.style.top)-5+'px';break;
+//                       case 40:boxNode.style.top=parseInt(boxNode.style.top)+5+'px';break;
+//                       case 37:boxNode.style.left=parseInt(boxNode.style.top)-5+'px';break;
+//                       case 39:boxNode.style.left=parseInt(boxNode.style.top)+5+'px';break;
+//                       console.log('hh')
+//                   }
+//               }
+    }
+
+    </script>
+</head>
+<body>
+<div id="box" style="width: 100px;height: 100px;background:red;position: absolute;top:10px;left:10px;"></div>
+</body>
+</html>

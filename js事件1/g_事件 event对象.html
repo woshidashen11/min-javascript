@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			onload = function(){
+				
+				var inputNode = document.getElementsByTagName('input')[0];
+				
+//				inputNode.onclick = function(){
+//					console.log(arguments);
+//					console.log(arguments[0]);
+//				}
+
+//				inputNode.onclick = function(evt){
+//
+//					//IE 6 7支持window.event,但不支持evt
+//					//FF 支持evt 但不支持window.event
+//					//获取事件对象
+//					var nEvent = evt || event;
+//					console.log(nEvent);
+//				};
+				
+				inputNode.onmousedown = function(evt){
+
+					//IE 6 7支持window.event,但不支持evt
+					//FF 支持evt 但不支持window.event
+					//获取事件对象
+					var nEvent = evt || event;
+					console.log(nEvent.button);
+				}
+				
+//				onclick = function(evt){
+//					var nEvent = evt || event;
+//					console.log('clientX:'+ nEvent.clientX+','+'clientY:'+nEvent.clientY)
+//					console.log('screenX:'+ nEvent.screenX+','+'screenY:'+nEvent.screenY)
+//				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="点击事件" />
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			//写法一(不推荐)
+//			setTimeout("alert('a')",1000);
+			
+			//写法二(推荐)
+//			function tips(){
+//				alert('温馨提示！');
+//			}
+//			setTimeout(tips,3000);
+			
+			function t(){
+				confirm("确定吗？")
+			}
+             setTimeout(t(),2000) 
+
+
+			//写法三
+			//延时调用
+//			var timer = setTimeout(function(){
+//
+//				alert('温馨提示！');
+//			},3000);
+//
+//			//关闭延时对象
+//			clearTimeout(timer);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+body{
+	background: url(../img/bg2.jpg);
+}
+
+#box{
+	
+	width: 500px;
+	height: 300px;
+	border: 1px solid #000;
+	background: pink;
+	margin:0 auto;
+}

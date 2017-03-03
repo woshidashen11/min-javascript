@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+
+			onload = function(){
+
+				var boxNode = document.getElementById('father');
+				console.log(boxNode.childNodes);
+				
+				//访问第一个子节点
+				//console.log(boxNode.childNodes[0]);
+				//console.log(boxNode.firstChild);
+
+				//访问最后一个子节点
+				//console.log(boxNode.childNodes[boxNode.childNodes.length - 1]);
+				//console.log(boxNode.lastChild);
+
+
+
+//				//空串
+//				console.log(boxNode.lastChild.nodeValue);
+//				console.log(boxNode.lastChild.nodeType);
+//				console.log(boxNode.lastChild.nodeName);
+
+
+				var fatherNode = document.getElementById('father');
+				console.log(fatherNode.childNodes);
+				var boxNode1 = document.getElementById('box1');
+				var boxNode2 = document.getElementById('box2');
+				var boxNode3 = document.getElementById('box3');
+				
+				//boxNode1的父级节点
+//				console.log(boxNode1.parentNode);
+//				console.log(boxNode1.parentNode == fatherNode);
+
+				//同级的下一个节点
+//				console.log(boxNode1.nextSibling);
+//				console.log(boxNode1.nextSibling.nextSibling);
+//				//同级的上一个节点
+//				console.log(boxNode1.previousSibling);
+//				//验证是否等于本身
+//				console.log(boxNode1.previousSibling.nextSibling == boxNode1);
+//
+//				//获取一个节点的文档根节点
+				//console.log(boxNode3.ownerDocument);
+//				console.log(boxNode2.ownerDocument == document);
+//
+				
+//				var fatherNode = document.getElementById('father');
+//
+				console.log(fatherNode.childNodes.length);
+//				/*
+//				 * 除去里面的空白文本节点
+//				 * 1: 猜想是''，最后证实不对
+//				 * 2: 文本节点 nodeType
+//				 * 3: 遍历childNodes
+//				 */
+//
+//				 function filterSpaceElement(nodes){
+//				 	for(var index = 0;index <　nodes.childNodes.length;index++){
+//				 		var nElement = nodes.childNodes[index];
+//				 		console.log(nElement);
+//				 		//判断
+//				 		//^表示起始位置 $表示末尾位置
+//				 		//\s表示包括回车和空格的任意字符 ， +表示可以出现多次[1 无穷大]，*也表示出现多次[0 无穷大]
+//				 		//test函数：是否匹配正则表达式,返回值为布尔变量
+//				 		if(nElement.nodeType == 3 && /^\s+$/.test(nElement.nodeValue)){
+//				 			//删除子节点
+//				 			nodes.removeChild(nElement);
+//				 		}
+//				 	}
+//				 	return nodes;
+//				 }
+//				 filterSpaceElement(fatherNode);
+//				 console.log(fatherNode.childNodes.length);
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id="father">内容
+			<div id="box1">内容1</div>
+
+			<div id="box2">内容2</div>
+
+			<div id="box3">内容3</div>
+
+		</div>
+	</body>
+</html>

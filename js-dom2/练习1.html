@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        onload=function oImg(){
+            var oImgNode=document.getElementById('bord');
+            console.log(oImgNode.childNodes);
+            var inputArr = document.getElementsByClassName('img1');
+           // console.log(inputArr);
+//            var oImaDiv=document.createElement('div');
+//            var oImaA=document.createElement('a');
+//            var oImaS=document.createElement('img');
+//            oImaDiv.appendChild(oImaA);
+//            oImaA.appendChild(oImaS);
+           // oImaA.setAttribute('href','#');
+            replace.C('src','img/1.jpg');
+            console.log(oImaDiv);
+        }
+
+        var bodyNode = document.getElementsByTagName('body')[0];
+        function fn(n){
+            if(n==1){
+                var boxNode=document.getElementById("box");
+                var box1=document.createElement("img");
+                box1.setAttribute("src","img/1.jpg");
+                boxNode.appendChild(box1);
+                boxNode.replaceChild(box1,boxNode.childNodes[0]);
+            }
+            if(n==2){
+                var boxNode=document.getElementById("box");
+                var box2=document.createElement("img");
+                box2.setAttribute("src","img/2.jpg");
+                boxNode.appendChild(box2);
+                boxNode.replaceChild(box2,boxNode.childNodes[0]);
+            }if(n==3){
+                var boxNode=document.getElementById("box");
+                var box3=document.createElement("img");
+                box3.setAttribute("src","img/3.jpg");
+                boxNode.appendChild(box3);
+                boxNode.replaceChild(box3,boxNode.childNodes[0]);
+            }
+
+        }
+    </script>
+
+    <style>
+       #img1 img {width: 200px;float: left;}
+       #img2 img {width: 200px;float: left;}
+       #img3 img {width: 200px;float: left;}
+       #img4 img{width: 200px;}
+    </style>
+</head>
+<body>
+<div style="width: 700px;height:400px;border: 1px solid red;" id="bord" onclick="oImg()" >
+    <div id="img1" ><a href="#"><img src="img/1.jpg" /></a></div>
+    <div id="img2" ><a href="#"><img src="img/2.jpg" /></a></div>
+    <div id="img3" ><a href="#"><img src="img/3.jpg" /></a></div>
+    <div id="img4" ><a href="#"><img src="img/1.jpg" /></a></div>
+
+
+</div>
+</body>
+</html>

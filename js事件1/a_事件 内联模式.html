@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//内联模式2
+			//内联模式的函数不能嵌套在其他函数之内
+			function test(){
+				alert('内联模式2');
+			}
+		</script>
+	</head>
+	<body>
+		<!--内联模式1-->
+		<!--<div onclick="alert('点击事件')" style="width: 100px;height: 100px; background: red;"></div>-->
+	
+		<div onclick="test()" style="width: 100px;height: 100px; background: red;"></div>
+		
+	</body>
+</html>

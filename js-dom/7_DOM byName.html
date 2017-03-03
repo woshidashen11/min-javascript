@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			onload = function(){
+//				//通过name获取
+//				var nodeArr = document.getElementsByName('one');
+//				console.log(nodeArr.length);
+//				for(var index= 0; index < nodeArr.length;index++){
+//					console.log(nodeArr[index]);
+//				}
+
+				//通过class获取
+//				var nodeArr1 = document.getElementsByClassName('pox');
+//				console.log(nodeArr1);
+//				console.log(nodeArr1[1].value);
+
+				//第一步可以现货区id值为box的元素节点div
+//				var boxNode = document.getElementById('box');
+////
+////				//第二，步直接通过boxNode调用getElementByTagName取获取子节点中div元素节点
+//				var arr = boxNode.getElementsByTagName('img');
+//				console.log(arr);
+//				var arr = boxNode.getElementsByClassName('icon');
+//				console.log(arr);
+////
+				//以下代码错误
+				//var oNode = boxNode.getElementById('subBox');
+				//console.log(oNode);
+				//以下代码错误
+				//var arr = boxNode.getElementsByName('image');
+				//console.log(arr);
+				
+		      }
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" name="one"  class="pox" value="1" />
+		<input type="text" name="one"  class="pox" value="2" />
+		<input type="text" name="one"  value="3"/>
+		
+		<div id="box">
+			<div id="subBox"></div>
+			<div class="icon"></div>
+			<img src="img/1.jpg" alt=""  class="icon"/ >
+			<img src="img/2.jpg" alt="" name="image"/>
+		</div>
+	</body>
+</html>

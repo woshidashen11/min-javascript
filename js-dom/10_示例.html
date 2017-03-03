@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			onload =function(){
+				var boxNode = document.getElementById('box');
+				//固定增加的文字大小
+				var change = 5;
+				var i = 0;
+				//启动定时器
+				setInterval(function(){
+					i++;
+					//修改style.fontSize
+					boxNode.style.fontSize = (parseInt(boxNode.style.fontSize) + change) +'px';
+					if(i%6 == 0){
+						change *= -1;
+					}
+				},1000);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box" style="color: #FFF;width: 600px;height: 300px;background: purple;font-size: 14px;">看我72变</div>
+	</body>
+</html>

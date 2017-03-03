@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			//页面加载完成之后才会执行的方法
+			onscroll = function() {
+
+				var divNode = document.getElementById('showDiv');
+
+				//获取滑动的距离
+				var distance = document.documentElement.scrollTop || document.body.scrollTop;
+
+				console.log(distance);
+
+				if(distance > 2000) {
+
+					//显示回到顶部的块元素
+					divNode.style.display = 'block';
+
+				} else {
+
+					divNode.style.display = 'none';
+
+				}
+
+				//				divNode.onclick = function(){
+				//						
+				//				}
+
+			}
+
+			//回到顶部
+			function scrollToTop() {
+
+				//修改距离顶部的数值
+				document.documentElement.scrollTop = document.body.scrollTop = 0;
+			}
+		</script>
+	</head>
+
+	<body style="height: 5000px;">
+		<div onclick="scrollToTop()" id="showDiv" style="display: none;width: 100px;height: 100px;background: #F00;position: fixed; right: 10px;bottom: 10px;">回到顶部</div>
+	</body>
+
+</html>

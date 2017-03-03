@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			onload = function(){
+				var boxNode = document.getElementById('box');
+			    	boxNode.onmouseover = function(){
+					boxNode.innerHTML = '我们都是少先队员';
+				};
+				boxNode.onmouseout = function(){
+					boxNode.innerHTML = '我们都是国民党员';
+				};
+				boxNode.onmousemove = function(){
+					var red = Math.floor(Math.random() * 256);
+					var green = Math.floor(Math.random() * 256);
+					var blue = Math.floor(Math.random() * 256);
+					//随机
+					boxNode.style.background = 'rgb(' + red + ',' + green + ',' + blue +')';//rgb(110,100,50)
+//					console.log('rgb(' + red + '，' + green + ',' + blue +')');
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<div id="box"  style="width: 100px;height: 100px; background: red;"></div>
+		
+	</body>
+</html>

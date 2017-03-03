@@ -1,0 +1,147 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+    <!--&lt;!&ndash;/**&ndash;&gt;-->
+    <!--&lt;!&ndash;* 当鼠标进入div时，div的内容显示'我们都是少先队员'&ndash;&gt;-->
+    <!--&lt;!&ndash;* 当鼠标移出div时，div的内容显示'我们都是国民党员'&ndash;&gt;-->
+    <!--&lt;!&ndash;* 当鼠标在div内部移动的时候，div的背景色会发生变化(随机色)&ndash;&gt;-->
+    <!--&lt;!&ndash;*&ndash;&gt;-->
+    <!--&lt;!&ndash;*/&ndash;&gt;-->
+<!--<script>-->
+<!--//    onload=function (){-->
+<!--//    var moseNode=document.getElementById('mose');-->
+<!--//        moseNode.onmouseover =function(){-->
+<!--//            moseNode.innerHTML='我们都是少先队员';-->
+<!--//            };-->
+<!--//        moseNode.onmouseout=function(){-->
+<!--//            moseNode.innerHTML='我们都是国民党员';-->
+<!--//        };-->
+<!--//        moseNode.onmousemove=function()-->
+<!--//        {-->
+<!--//            var red=Math.floor(Math.random()*256);-->
+<!--//            var green=Math.floor(Math.random()*256);-->
+<!--//            var blue=Math.floor(Math.random()*256);-->
+<!--//        moseNode.style.background = 'rgb('+red+','+green+','+blue+')';//rbg(12,43,54)-->
+<!--//      console.log('rgb('+red+','+green+','+blue+')')-->
+<!--//        }-->
+<!--//    };-->
+
+      <!--onload=function(){-->
+          <!--var contentNode=document.getElementById('content');-->
+          <!--var divNode=document.getElementById('mose');-->
+          <!--contentNode.onselect=function(){-->
+              <!--divNode.innerHTML= '文本内容被选中';-->
+          <!--};-->
+          <!--contentNode.onchange=function(){-->
+              <!--divNode.innerHTML= '文本内容被修改';-->
+          <!--}-->
+
+      <!--}-->
+<!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;<div id="mose" style="width: 200px;height:200px; background:red;"></div>&ndash;&gt;-->
+<!--<input type="text" id="content">-->
+<!--<div id="mose" style="width: 200px;height:200px; background:red;"></div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title></title>-->
+    <!--<script type="text/javascript">-->
+        <!--onload = function() {-->
+            <!--var inputArr = document.getElementsByTagName('input');-->
+            <!--for(var i = 0; i < inputArr.length; i++) {-->
+                <!--/*-->
+                 <!--* 以下分析的出发点：元素节点-->
+                 <!--//添加一个属性节点保存i的值-->
+                 <!--inputArr[i].setAttribute('index',i + 1);-->
+                 <!--//绑定事件-->
+                 <!--inputArr[i].onclick = function() {-->
+                 <!--//通过this获取到触发次事件的对象-->
+                 <!--console.log(this.getAttribute('index'));-->
+                 <!--}-->
+                 <!--*/-->
+                <!--//以下分析出发点：对象-->
+                <!--//元素节点实际就是object-->
+                <!--//给object添加属性-->
+                <!--inputArr[i].index = i + 1;-->
+                <!--//绑定事件-->
+                <!--inputArr[i].onclick = function() {-->
+                    <!--console.log(this.index);-->
+                <!--}-->
+            <!--}-->
+        <!--};-->
+        <!--/*-->
+         <!--//全局函数-->
+         <!--//注意：直接调用全局函数，this打印的是window对象-->
+         <!--function test(){-->
+
+         <!--console.log(this);-->
+
+         <!--}-->
+         <!--test();-->
+         <!--*/-->
+    <!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<input type="button" value="点击事件1" />-->
+<!--<input type="button" value="点击事件2" />-->
+<!--<input type="button" value="点击事件3" />-->
+<!--</body>-->
+
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        onload = function(){
+             var oInput = document.getElementById('content');
+             //文本内容被选中
+//             oInput.onselect = function(){
+//             console.log('文本内容被选中');
+//             };
+//             oInput.onchange = function(){
+//             //注意：失去焦点
+//             console.log('文本内容被修改');
+//             };
+//             oInput.onfocus = function(){
+//             console.log('获得焦点');
+//             };
+//             oInput.onblur = function(){
+//             console.log('失去焦点');
+//             };
+//          var formArr = document.getElementsByTagName('form');
+//          //提交事件
+//          console.log(formArr);
+//           formNode=formArr[0];
+//          console.log(formNode);
+//          formNode.onsubmit = function(){
+//              console.log('提交');
+//          };
+//          //重置事件
+//          formNode.onreset = function(){
+//              console.log('重置');
+//          }
+        }
+    </script>
+</head>
+<body>
+<!--<input type="text" id="content"/>-->
+
+<form action="http://www.baidu.com" target="_blank">
+    <input type="text" />
+    <input type="submit" value="提交"/>
+    <input type="reset" value="重置"/>
+</form>
+</body>
+</html>

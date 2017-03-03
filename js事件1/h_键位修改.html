@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			onmousedown = function(evt){
+				
+				var nEvent = evt || event;
+				
+				if(nEvent.shiftKey){
+					
+					console.log('使用了shift键');
+					
+				}
+				
+				if(nEvent.ctrlKey){
+					
+					console.log('使用了ctl键');
+					
+				}
+				
+				if(nEvent.altKey){
+					
+					console.log('使用了alt键');
+					
+				}
+				
+				if(nEvent.metaKey){
+					
+					console.log('使用了metaKey键');
+					
+				}
+				
+				if(nEvent.ctrlKey && nEvent.shiftKey){
+					
+					console.log('同时使用了ctrl键和shift键');
+					
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

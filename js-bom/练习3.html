@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			//2.已知字符串str = “I love BeiJing”,找出love的范围
+//			var str = 'I love BeiJing';
+//			var subStr = 'love';
+//			//起始
+//			var startIndex = str.indexOf(subStr);
+//			//末尾
+//			var endIndex = startIndex + subStr.length - 1;
+//			console.log(startIndex + '~' + endIndex);
+			
+			/*
+			 * 将字符串str = “When I was young, I love a girl in neighbor class.”中,
+			 * 				从young提取到girl。
+			 * 				但是不许数
+                             young, I love a girl
+
+			 * 
+			 */
+//			var str = 'When I was young, I love a girl in neighbor class.';
+//			var startIndex = str.indexOf('young');
+//			var endIndex = str.indexOf('girl') + 'girl'.length;
+//			console.log(str.substring(startIndex,endIndex));
+			
+			
+			
+			function check(){
+				
+				//节点
+				var userNode = document.getElementById('username');
+				var passwordNode = document.getElementById('password');
+				
+				var userText = userNode.value;
+				var passwordText = passwordNode.value;
+				
+				//验证
+				//1.去掉空格
+				userText.replace(/ /g,'');
+				passwordText.replace(/ /g,'');
+				
+				//2.用户名长度不低于6，不高于20
+				if(userText.length < 6 || userText.length > 20){
+					
+					alert('用户名长度有误');
+					return;
+				}
+				
+				//3.用户名不可以用数字开头
+				/*
+				 * 1.找到字符串中的第一个字符
+				 * 2.验证是否为数字（数字字符）
+				 *   （1）：通过ASCII码值
+				 * 	 （2）：尝试转换为number类型，如果失败，则不是数字字符
+				 */
+				if(userText[0] >= '0' && userText[0] <= '9'){
+					alert('第一位是数字');
+					return;
+					
+				}
+				
+				//4.密码不能为空
+				if(passwordText.length ==0){
+					
+					alert('密码不能为空');
+					return;
+				}
+				
+				alert('恭喜成为千峰VIP会员，请充值');
+				
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" placeholder="请输入账号" id="username"/>
+		<input type="password" placeholder="请输入密码" id="password"/>
+		<input type="button" value="注册" onclick="check()"/>
+		
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+
+//            function tips(){
+//               var arr=['red','blue','yellow','green','black','orange'];
+//               var divNode=document.getElementsByTagName('div')[0];
+//               var count=0;
+//                   setInterval(function()
+//                   {
+//                     count++;
+//                       divNode.style.background=arr[count];
+//                       if(count==arr.length-1){
+//                         count=-1;
+//                       }
+//                   },300);}
+
+                    // 写一个定时器, 每隔0.1秒修改一次div内文字颜色和文字大小.
+                    //最开始这个文字是默认大小, 开启定时器后文字大小开始增大,
+                    // 当增大了6次以后, 文字大小开始缩小, 缩小6次, 文字再开始增大…
+              onload= function tips(){
+                   var arr=['red','blue','yellow','green','black','orange'];
+                   var Arr=['18px','20px','22px','24px','26px','28px'];
+                   var divNode=document.getElementsByTagName('div')[0];
+                  var count=0;
+                   setInterval(function (){
+                       count++;
+                       divNode.style.color=arr[count];
+                       divNode.style.fontSize=Arr[count];
+                       if(count==arr.length-1){
+                           count--;
+
+                       }
+                   },200)
+               }
+    </script>
+</head>
+<body>
+<!--<div style="class:hh; height:100px;width:100px; background:red;"></div>-->
+<!--<input type="button" value="变换颜色" onclick="tips()"/>-->
+<div style="background:pink;width:300px;height:150px;border:
+1px solid #000;color:red;font-size:18px" onclick="tips()">看我72变</div>
+
+</body>
+</html>

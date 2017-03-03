@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/css1.css"  type="text/css" id="link"/>
+		<script>
+			
+			//换肤
+			function changeSkin(n){
+				//换掉css文件
+				var oLinkNode = document.getElementById('link');
+				n == 1? oLinkNode.href = 'css/css1.css':oLinkNode.href = 'css/css2.css';
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<input type="button" value="皮肤1" onclick="changeSkin(1)"/>
+			<input type="button" value="皮肤2" onclick="changeSkin(2)"/>
+		</div>
+	</body>
+</html>

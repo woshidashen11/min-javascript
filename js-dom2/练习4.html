@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1 {width: 400px;height: 50px;background: lightgray;}
+          #kj {background:orange;}
+         input {float: left;width:80px;text-align: center;line-height:48px;background:lightgray;border:none;}
+        #box2 {width: 398px;height:400px;border: 1px solid gray;}
+    </style>
+
+    <script>
+        onload=function(){
+            var boxArr=document.getElementsByTagName('input');
+            var box2Node=document.getElementById('box2');
+            boxArr[0].onclick=function(){
+                boxArr[0].style.background='orange';
+                boxArr[1].style.background='lightgray';
+                box2Node.innerHTML='科技科技科技科技科技'
+            };
+            boxArr[1].onclick=function(){
+                boxArr[0].style.background='lightgray';
+                boxArr[1].style.background='orange';
+                box2Node.innerHTML='探索探索探索探索'
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="box1">
+    <input type="button" value="科技" id="kj" />
+    <input type="button" value="探索" />
+</div>
+<div id="box2">科技科技科技科技科技</div>
+</body>
+</html>

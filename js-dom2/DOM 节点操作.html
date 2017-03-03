@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			
+			onload = function(){
+				
+				//覆盖文档
+			//	document.write('<div>我们都是英雄!</div>')
+			//创建一个元素节点
+				var newDivNode = document.createElement('div');
+				var bodyNode = document.getElementsByTagName('body')[0];
+				console.log(bodyNode.childNodes);
+
+
+//
+//				//末尾添加一个子节点
+				//bodyNode.appendChild(newDivNode);
+//
+//			//	//创建一个文本节点
+			//var newTextNode = document.createTextNode('我们都喜欢香皂');
+//
+//				//末尾添加一个子节点
+//				newDivNode.appendChild(newTextNode);
+//
+//				console.log(bodyNode.childNodes);
+//
+//				//封装一个方法，提供两个参数，创建任意（测试使用div和p）元素节点
+//				/*
+//				 * creatNewNode('p','我们都是超人')
+//				 *
+//				 *
+//				 */
+//
+				function creatNewNode(nodeString,contentString){
+					//nodeString 代表 'p'
+					//contentString代表 '我们都是超人'
+					//创建一个新的元素节点
+					var newNode = document.createElement(nodeString);
+					var textNode = document.createTextNode(contentString);
+					//追加到末尾
+					newNode.appendChild(textNode);
+					return newNode;
+				}
+				bodyNode.appendChild( creatNewNode('p','我们都是超人'));
+				//给新节点设置属性(添加属性节点)
+				//newDivNode.style = 'width:100px;height:100px;background:red';
+				//newDivNode.setAttribute('style','width:100px;height:100px;background:red');
+				/**
+				 * 可以添加任意属性
+				 * creatNewNodeWithAttributes('p','我们都是超人','style','width:100px;height:100px;font-size:18px')
+				 *
+				 */
+				function creatNewNodeWithAttributes(nodeString,contentString,attribute,value){
+					/**
+					 * attribute 代表'style'
+					 * value 代表 'width:100px;height:100px;font-size:18px'
+					 *
+					 */
+					//创建一个新的元素节点
+					var newNode = document.createElement(nodeString);
+					//设置属性
+					newNode.setAttribute(attribute,value);
+					var textNode = document.createTextNode(contentString);
+					//追加到末尾
+					newNode.appendChild(textNode);
+					return newNode;
+				}
+				bodyNode.appendChild(creatNewNodeWithAttributes('p','哈哈','style','width:100px;height:100px;font-size:30px'))
+			}
+		</script>
+		
+	</head>
+	<body>
+		
+		
+	</body>
+</html>

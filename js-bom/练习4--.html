@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			// 字母数字组合验证码（四位） 
+			//(如: 4YT8)(数字,大写字母随机)
+			/*
+			 * 
+			 * 1.随机是字母或者是数字  字母和数字出现的几率是相等
+			 * 2.随机数字
+			 * 3.随机大写字母
+			 * 4.4位数   + concat()   循环（递归）4个数，拼接到一起
+			 * 
+			 */
+			//声明一个空的字符串
+//			var str = '';
+//			for(var i = 0; i < 4; i++){
+//				
+//				//随机
+//				var number =  Math.random()//[0 1); [0-0.5) [0.5-1)
+//				
+//				if(number < 0.5){
+//					//代表要随机一个数字
+//					
+//					var temp = Math.floor(Math.random() * 10);
+//					//拼接到字符串当中
+//					str += temp;
+//					
+//				}else{
+//					//代表要随机一个大写字母(65-90)
+//					var temp = String.fromCharCode( Math.floor(Math.random() * 26 + 65) );
+//					str += temp;
+//				}
+//				
+//			}
+//			console.log(str);
+			
+			//  将字符串按照单词进行逆序，空格作为划分单词的唯一条件
+            //  传入:”Welome to Beijing”改为 “Beijing to Welcome”
+            //  思考：”Welome to Beijing”改为 “gnijieB ot emoleW”
+//			var str = 'Welome to Guangzhou';
+//			//切割
+//			var arr = str.split(' ');
+//			//逆向
+//			arr.reverse();
+//			console.log(arr.join(' '));
+
+			/*
+			 * 传入一个数组，起元素类型与个数皆未知，返回新数组，由原数组
+				的元素正序反序拼接而成
+				传入[“One”, “Two”,”Three”] 返回
+				[“One”, “Two”, “Three”,”Three”,”Two”, “One”]
+			 */
+			
+			/*
+			 * 1.逆向数组
+			 * 2.拼接
+			 */
+			
+//			function connectArr(arr){
+//				
+//				//循环
+//				for(var i = arr.length - 1;i >= 0;i--){
+//					//arr长度变化没有影响到循环
+//					arr.push(arr[i]);
+//					
+//				}
+//				
+//				return arr;
+//			}
+//			
+//			console.log(connectArr(['One','Two','Three']));
+
+
+			// 实现函数，查找子串出现的次数，返回字符串str中出现子串的次数
+			//	如传入:”abcabcabc”, “abc”;   返回:3
+			
+//			var str = 'babc@abc@abcd';
+//			//替换
+//			var count = 0;
+//			
+//			while(str.indexOf('abc') >= 0 ){
+//				
+//				count++;
+//					
+//				//替换
+//				str = str.replace('abc','');
+//				
+//			}
+//			console.log(count);
+			
+			/*
+			 * 4.  已知千锋邮箱的用户名只能由数字字母下划线组成，
+			 * 域名为@1000phone.com
+			,判断一个字符串是否是千锋邮箱，
+			是返回true，不是返回false。
+			 * 
+			 */
+			
+			/*
+			 * 1.以@为分隔符，切割 分为左右两部分
+			 * 2.右边部分肯定是1000phone.com字符串
+			 * 3.左边部分判断是否为数字字母和下划线
+			 * 
+			 */
+			 
+//			 	function check(str){
+//			 		
+//			 		
+//			 		//切割
+//			 		var arr = str.split('@');
+//			 		
+//			 		if(arr.length > 2){
+//			 			
+//			 			alert('邮箱格式错误');
+//			 			return;
+//			 			
+//			 		}
+//			 		
+//			 		//验证右边arr[1];
+//			 		if(arr[1] != '1000phone.com'){
+//			 			
+//			 			alert('邮箱格式错误');
+//			 			return;
+//			 			
+//			 		}
+//			 		
+//			 		//验证左边arr[0]
+//			 		//循环判断每一个字符是否为数字字母或者下划线
+//			 		var username = arr[0];
+//			 		for(var index in arr[0]){
+//			 			
+//			 			if(		!(username[index] >= 'A' && username[index] <= 'Z' 
+//					 			|| username[index] >= 'a' && username[index] <= 'z'
+//					 			|| username[index] >= '0'&& username[index] <='9' 
+//					 			|| username[index] == '_')   ){
+//			 				
+//			 				alert('用户名有误');
+//			 				return;
+//			 				
+//			 			}
+//			 			
+//			 		}
+//			 		
+//			 	}
+//			 	
+//			 	check('&mail#!(@1000phone.com')
+			 
+				
+				
+				//判断是否是数字字母下划线
+//				var str = '1234&abd_';
+//				var str1='fsdjkfnsde32843u9ejwkds'
+				//^代表起始位置
+				//$代表结束位置
+				///^[0-9a-zA-Z_]*$/:从起始到末尾，中间部分的字符都必须是0-9，a-z，A-Z，_这几种字符
+//				var res = str.search(/^[0-9a-zA-Z_]*$/);
+//				var res1 = str1.search(/^[0-9a-zA-Z_]*$/);
+//				console.log(res1)
+//				console.log(res);
+				
+				/*
+				 * 传入:”HelloMyWorld”
+          			返回:”Hello my world”
+				 * 
+				 */
+//				  function changeWord(str){/**/
+//				  	
+//				  	/*
+//				  	 * 1.查找大写字母
+//				  	 * 2.第一个大写字母要保留
+//				  	 * 3.其他大写字母要变成小写，并且要添加空格
+//				  	 * 
+//				  	 */
+//				  	
+//				  	//切割
+//				  	var arr = str.split('');
+//				  	
+//				  	for(var index = 1;index < arr.length;index++){
+//				  		
+//				  		if(arr[index] >= 'A' && arr[index] <= 'Z'){
+//				  			//直接修改内容
+//				  			arr[index] = ' ' + arr[index].toLowerCase();
+//				  			
+//				  		}
+//				  		
+//				  	}
+//				  	
+//				  	 return arr.join('');
+//				  }
+//				 
+//				  console.log(changeWord('HelloMyWorld'));
+
+
+				/*
+				 * 
+				 * 已知一个字符串对象中，英语单词用各种非字母字符分割，统计
+					单词的个数
+					Yes,she**is%%my@love
+				 */
+				 
+				 //var str = 'Yes,she**is%%my@love';
+				 
+				 /*
+				  * 1.把所有的特殊符号都替换成空格
+				  * 2.以空格为切割符
+				  * 3.通过数组获得单词的个数
+				  */
+				 
+//				 for(var i = 0; i < str.length; i++){
+//				 	
+//				 	if( !(str[i] >= 'A' && str[i] <= 'Z' || str[i] >= 'a' && str[i] <='z')){
+//				 		
+//				 		 str = str.replace(str[i],' ');
+//				 	}
+//				 	
+//				 }
+//				 
+//				 //切割
+//				 var arr = str.split(' ');
+//				 console.log(arr);
+//				 
+//				 //记录单词的个数
+//				 var count = 0;
+//				 for(var index in arr){
+//				 	
+//				 	if(arr[index].length != 0){
+//				 		
+//				 		count++;
+//				 		
+//				 	}
+//				 		
+//				 }
+//				 console.log(count);
+
+
+				var str = 'Yes,she**is%%my@love';
+//				//[满足条件的特殊字符] [0-9A-Za-z_]
+				var arr = str.split(/[\*,%@]/);
+				console.log(arr);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

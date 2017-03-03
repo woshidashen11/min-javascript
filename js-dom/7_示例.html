@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			function changeColor(){
+				var arr = ["red", "blue", "yellow", "green", "black", "orange"];
+				var count = 0;
+				var divNode = document.getElementsByTagName('div')[0];
+				setInterval(function(){
+					count++;
+//					divNode.style.background = arr[count];
+//					if(count == arr.length - 1){
+//						count = -1;
+//					}
+					divNode.style.background = arr[count%6];
+				},200);
+			}
+		</script>
+	</head>
+	<body>
+		<div style="width: 100px;height: 100px;background: red;"></div>
+		<input type="button" value="改变颜色" onclick="changeColor()"/>
+	</body>
+</html>

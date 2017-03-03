@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 1.搭界面
+			 * 
+			 */
+			
+			/*
+			 * 2.（1）获取三个input的value值
+			 * 	 （2）新建一个tr元素节点，
+			 * 	 （3）新建四个td元素节点
+			 * 	 （4）td元素节点添加文本节点（第四个td特殊处理）
+			 * 	 （5）第四个td元素节点添加一个a元素节点，a元素节点设置好属性href
+			 * 	 （6）tr元素节点添加四个td元素节点
+			 * 	 
+			 */	
+			 
+			 /*
+			  * 3.把拼接好的tr元素节点添加到table之下的tBody元素节点下
+			  * 
+			  * 
+			  */
+			 
+			 	function saveInfo(){
+			 		
+			 		var inputArr = document.getElementsByTagName('input');
+			 		//获取三个数值
+			 		var idValue = inputArr[0].value;
+			 		var nameValue = inputArr[1].value;
+			 		var telValue = inputArr[2].value;
+			 		//创建一个trNode
+			 		var trNode = document.createElement('tr');
+			 		//创建前三个td
+			 		var idNode = creatNewNode('td',idValue);
+			 		var nameNode = creatNewNode('td',nameValue);
+			 		var telNode = creatNewNode('td',telValue);
+			 		
+			 		//特殊处理第四td
+			 		var deleteNode = document.createElement('td');
+			 		var aNode = document.createElement('a');
+			 		//设置属性
+			 		aNode.setAttribute('href','#');
+			 		var textNode = document.createTextNode('删除');
+			 		aNode.appendChild(textNode);
+			 		deleteNode.appendChild(aNode);
+			 		
+			 		//tr元素节点添加四个td元素节点
+			 		trNode.appendChild(idNode);
+			 		trNode.appendChild(nameNode);
+			 		trNode.appendChild(telNode);
+			 		trNode.appendChild(deleteNode);
+			 		
+					var tableNode = document.getElementById('table');
+//					tableNode.appendChild(trNode);
+			 		
+			 		console.log(tableNode.childNodes);
+			 		
+			 	}
+			 	
+			 	function creatNewNode(nodeString,contentString){
+					//nodeString 代表 'p'
+					//contentString代表 '我们都是超人'
+					
+					//创建一个新的元素节点
+					var newNode = document.createElement(nodeString);
+					var textNode = document.createTextNode(contentString);
+					//追加到末尾
+					newNode.appendChild(textNode);
+					
+					return newNode;
+					
+				}			 	
+			 
+		</script>
+	</head>
+
+	<body>
+		ID：<input type="text" value="" /> 姓名：
+		<input type="text" value="" /> 电话：
+		<input type="text" value="" />
+		<input type="button" value="保存" onclick="saveInfo()"/>
+		<br />
+		<br />
+		<table border="1" id="table">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Tel</th>
+				<th>操作</th>
+
+			</tr>
+			<tr>
+				<td>3242</td>
+				<td>刘德华</td>
+				<td>888888888</td>
+				<td><a href="#">删除</a></td>
+			</tr>
+		</table>
+
+	</body>
+
+</html>

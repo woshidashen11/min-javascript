@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		
+			onload = function(){
+
+//				var oInput = document.getElementById('content');
+				//文本内容被选中
+//				oInput.onselect = function(){
+//					console.log('文本内容被选中');
+//				};
+//				oInput.onchange = function(){
+//					//注意：失去焦点
+//					console.log('文本内容被修改');
+//				};
+//				oInput.onfocus = function(){
+//					console.log('获得焦点');
+//				};
+//				oInput.onblur = function(){
+//					console.log('失去焦点');
+//				};
+				var formNode = document.getElementsByTagName('form')[0];
+				//提交事件
+				formNode.onsubmit = function(){
+					console.log('提交');
+				};
+				//重置事件
+//				formNode.onreset = function(){
+//					console.log('重置');
+//				}
+			}
+		</script>
+	</head>
+	<body>
+		<!--<input type="text" id="content"/>-->
+		<form action="http://www.baidu.com" target="_blank">
+			<input type="text" />
+			<input type="submit" value="提交"/>
+			<input type="reset" value="重置"/>
+		</form>
+	</body>
+</html>

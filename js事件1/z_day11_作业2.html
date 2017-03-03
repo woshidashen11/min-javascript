@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			table{
+				
+				margin: 0 auto;
+			}
+			
+			td {
+				width: 100px;
+				height: 100px;
+				background: #555555;
+				color: #FFF;
+				text-align: center;
+				border: 1px solid #555555;
+			}	
+		</style>
+		<script>
+			
+			onload = function(){
+				
+				var tdArr = document.getElementsByTagName('td');
+				for(var i = 0;i < tdArr.length - 1;i++){
+					
+					//添加属性
+					tdArr[i].setAttribute('onclick','selectMonth(' + i + ')');
+					
+				}
+				
+			}
+			
+			function selectMonth(n){
+				
+				var tdArr = document.getElementsByTagName('td');
+				for(var i = 0;i < tdArr.length - 1;i++){
+						
+						//当前选中的月份
+						if(n == i){
+							
+							tdArr[n].style.background = '#FFF';
+							tdArr[n].style.color = 'orange';
+							tdArr[n].style.border = '1px solid red';
+							
+						}else{
+							
+							tdArr[i].style.background = '#555555';
+							tdArr[i].style.color = 'white';
+							tdArr[i].style.border = '1px solid #555555';
+							
+						}
+						
+				}
+				//最后一个td节点
+				var showNode = tdArr[tdArr.length - 1];
+				var hNode = tdArr[n].childNodes[1];
+				showNode.innerHTML = hNode.innerHTML + '月份你好';
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<table border="1">
+			<tr>
+				<td>
+					<h3>1</h3>
+					<p>Jan</p>
+				</td>
+				<td>
+					<h3>2</h3>
+					<p>Feb</p>
+				</td>
+				<td>
+					<h3>3</h3>
+					<p>Mar</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3>4</h3>
+					<p>Apr</p>
+				</td>
+				<td>
+					<h3>5</h3>
+					<p>May</p>
+				</td>
+				<td>
+					<h3>6</h3>
+					<p>Jun</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3>7</h3>
+					<p>Jul</p>
+				</td>
+				<td>
+					<h3>8</h3>
+					<p>Aug</p>
+				</td>
+				<td>
+					<h3>9</h3>
+					<p>Sep</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3>10</h3>
+					<p>Oct</p>
+				</td>
+				<td>
+					<h3>11</h3>
+					<p>Nov</p>
+				</td>
+				<td>
+					<h3>12</h3>
+					<p>Dec</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"></td>
+			</tr>
+		</table>
+	</body>
+
+</html>

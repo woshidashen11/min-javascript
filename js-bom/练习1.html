@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //实现一个个人信息页面   姓名  年龄  学历  专业, 可以获取到输入的信息,
+        // 点击保存按钮以后, 弹出信息(信息显示形式: 姓名:张三,年龄:33,学历:本科,专业:计算机)
+        // 要求: 分别使用通过id, tagName, name三种获取节点的方式实现
+ //         function check(){
+//              var node1=document.getElementById("t1");
+//              var node2=document.getElementById("t2");
+//              var node3=document.getElementById("t3");
+//              var node4=document.getElementById("t4");
+//            //  alert("姓名 ："+node1.value+"年龄："+node2.value+"学历："+node3.value+"专业："+node4.value);
+//               var nodeArr=document.getElementsByTagName('input');
+//              alert("姓名："+nodeArr[0].value+"年龄："+nodeArr[1].value+"学历："+nodeArr[2].value+"专业："+nodeArr[3].value)
+//              var node=document.getElementsByName('t');
+//              alert("姓名："+node[0].value+"年龄："+node[1].value+"学历："+node[2].value+"专业："+node[3].value)
+    //   }
+
+    onload=function(){
+    var node=document.getElementById('no');
+        console.log(node);
+    var arr=node.getElementsByTagName('li');
+        console.log(arr);
+        for(var i=0;i<arr.length;i++){
+            if(i%2==0){
+               arr[i].style.color='red';
+            }else {
+                arr[i].style.color='green';
+            }
+        }
+    }
+    
+  </script>
+    
+    
+    <style>
+        .kt {background: blue;width: 500px;height: 18px;}
+        .kt .kj{background: yellow;width: 100px;float: left;text-align: center;}
+        .kt .ts{background: red;width: 100px;float: left;text-align: center;}
+
+    </style>
+</head>
+<body>
+
+       <!--<input type="text" placeholder="姓名"  name="t" id="t1" value=""/>-->
+       <!--<input type="text" placeholder="年龄"  name="t" id="t2" value=""/>-->
+       <!--<br />-->
+       <!--<input type="text" placeholder="学历"  name="t" id="t3" value=""/>-->
+       <!--<input type="text" placeholder="专业"  name="t" id="t4" value=""/>-->
+       <!--<br /><br />-->
+       <!--<input type="button" value="保存" onclick="check()" id="t5" name="t"/>-->
+
+      <ul id="no">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          
+     </ul>
+       <div class="kt">
+           <div class="kj">科技</div>
+           <div class="ts">探索</div>
+       </div>
+</body>
+</html>

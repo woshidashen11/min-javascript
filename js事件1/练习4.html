@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+        *{margin:0;padding:0;}
+        img {width: 50px;height:50px;}
+        .first img {width:160px ; height:160px;}
+    </style>
+
+     <script>
+         onload=function(){
+            var imgArr=document.getElementsByTagName('img');
+             var imgNode=imgArr[0];
+                 for(var i=0;i< imgArr.length;i++){
+
+                     imgArr[i].onmouseover=function (){
+
+                        var newScr=this.src.replace('small','big');
+                         imgNode.src= newScr;
+                        // console.log(newScr);
+                         //console.log('hh')
+                 }
+             }
+         }
+     </script>
+</head>
+<body>
+<table border="1">
+    <tr>
+    <td class="first" rowspan="3" colspan="3"><img src="img/big_1.jpg"></td>
+        <td><img src="img/small_1.jpg" ></td>
+        <td><img src="img/small_2.jpg"></td>
+    </tr>
+    <tr >
+        <td><img src="img/small_3.jpg" ></td>
+        <td><img src="img/small_4.jpg" ></td>
+    </tr>
+    <tr>
+        <td><img src="img/small_5.jpg"></td>
+        <td><img src="img/small_6.jpg"></td>
+    </tr>
+    <tr>
+        <td><img src="img/small_7.jpg" ></td>
+        <td><img src="img/small_8.jpg" ></td>
+        <td><img src="img/small_9.jpg" ></td>
+        <td><img src="img/small_10.jpg" ></td>
+        <td><img src="img/small_11.jpg" ></td>
+    </tr>
+
+
+</table>
+</body>
+</html>

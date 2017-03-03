@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        2, 如下图, 在输入框中输入用户名和密码,
+//        1, 当鼠标失去焦点时: 检测用户名长度至少6位, 且只能为数字和字母;检测密码长度至少8位
+//        2, 给登录按钮添加点击事件: 点击后弹出用户名和密码
+         onload=function (){
+             var sumNode=document.getElementById('sum');
+             var pasNode=document.getElementById('pas');
+             var butNode = document.getElementById('but');
+             sumNode.onblur=function () {
+                 if (sumNode.value.length < 6) {
+                     alert('用户名长度有错误A');
+                     return;
+                 } else {
+                     for (var i = 0; i < sumNode.value.length; i++) {
+                              if (!(sumNode.value[i] >='0' && sumNode.value[i] <='9'
+                                   || sumNode.value[i] >= 'a' && sumNode.value[i] <= 'z'
+                                   || sumNode.value[i] >= 'A' && sumNode.value[i] <= 'Z'))
+                              {
+                               alert('用户名字符有错误');
+                                return ;
+                              }
+                     }
+                 }
+             };
+
+             pasNode.onblur=function () {
+                 if (pasNode.value.length < 8) {
+                     alert('密码长度有错误');
+                     return ;
+                 } console.log( pasNode.value.length );
+                 console.log( pasNode.value);
+             };
+
+             butNode.onclick=function () {
+                 alert('用户名为：'+sumNode.value+'密码为：'+pasNode.value);
+
+             }
+          }
+    </script>
+</head>
+<body>
+<input type="text" placeholder="用户名" id="sum" value=""/>
+<br />
+<input type="password" placeholder="密码" id="pas"/>
+<br />
+<input type="button" value="登录" id="but"/>
+
+</body>
+</html>

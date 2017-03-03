@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			onload = function(){
+				onclick = function(){
+
+					console.log('单击');
+				};
+				ondblclick = function(){
+					console.log('双击');
+				};
+				onmousedown = function(){
+					console.log('鼠标按下');
+				};
+				onmouseup = function(){
+					console.log('鼠标弹起')
+				};
+				var divNode = document.getElementById('box');
+				divNode.onmouseover = function(){
+					console.log('进入window');
+				};
+				divNode.onmouseout = function(){
+					console.log('移出divNode');
+				};
+				divNode.onmousemove = function(){
+					console.log('在内部移动');
+				};
+				/**
+				 * 当鼠标进入div时，div的内容显示'我们都是少先队员'
+				 * 当鼠标移出div时，div的内容显示'我们都是国民党员'
+				 * 当鼠标在div内部移动的时候，div的背景色会发生变化(随机色)
+				 * 
+				 */
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box"  style="width: 100px;height: 100px; background: red;"></div>
+		
+	</body>
+</html>

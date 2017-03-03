@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var index = 1;
+			//等到页面加载完成，内部的代码才会执行
+			onload = function(){
+				var boxNode = document.getElementById('box');
+				//添加事件(绑定)
+				boxNode.onclick = function(){
+					
+					alert('脚本模式1');
+					
+				}
+				function fn(){
+					alert(index);
+				}
+				//注意不需要后面的（）
+				boxNode.onclick = fn;
+			};
+			index = 100;
+		</script>
+	</head>
+	<body>
+		<div id="box" style="width: 100px;height: 100px; background: red;"></div>
+	</body>
+</html>

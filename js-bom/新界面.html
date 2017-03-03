@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新界面</title>
+		
+		<script>
+			
+			//子窗口加载完成之后调用
+			onload = function(){
+				
+				//获得父窗口对象
+				opener.document.write('来自子窗口的信息');
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

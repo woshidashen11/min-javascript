@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			//当浏览器发生滚动的时候，以下方法会被调用
+			onscroll = function (){
+				
+				//参考day2，逻辑运算符
+				var distance = document.documentElement.scrollTop || document.body.scrollTop;
+				
+				console.log(distance);
+				
+			}
+			
+		</script>
+	</head>
+	<body style="height: 5000px;">
+	</body>
+</html>

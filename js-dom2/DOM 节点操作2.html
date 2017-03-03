@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			onload = function() {
+				//创建一个元素节点
+				var newDivNode = document.createElement('div');
+				var bodyNode = document.getElementsByTagName('body')[0];
+				//末尾添加一个子节点
+				bodyNode.appendChild(newDivNode);
+				//创建一个文本节点
+				var newTextNode = document.createTextNode('我们都喜欢香皂');
+				//末尾添加一个子节点
+				newDivNode.appendChild(newTextNode);
+				function creatNewNode(nodeString, contentString) {
+					//创建一个新的元素节点
+					var newNode = document.createElement(nodeString);
+					var textNode = document.createTextNode(contentString);
+					//追加到末尾
+					newNode.appendChild(textNode);
+					return newNode;
+				}
+				//再创建一个新节点
+				var pNode = creatNewNode('p','嘿嘿');
+				//参数（要插入的节点，在此节点之前插入）
+				bodyNode.insertBefore(pNode,newDivNode);
+				console.log('替换前：');
+				console.log(bodyNode.childNodes);
+				//替换节点
+				var pNode1 = creatNewNode('p','变身');
+				bodyNode.replaceChild(pNode1,bodyNode.firstChild);
+				console.log('替换后：');
+				console.log(bodyNode.childNodes);
+				//复制节点
+				var cloneNode = bodyNode.lastChild.cloneNode(true);
+				console.log(cloneNode);
+				var cloneNode = bodyNode.lastChild.cloneNode(false);
+				console.log(cloneNode);
+//				删除节点
+				bodyNode.removeChild(bodyNode.firstChild);
+				console.log(bodyNode)
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

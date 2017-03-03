@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{ background: blue; }
+			#box{ background: red; }
+		</style>
+	</head>
+	<body>
+		<div id="box" class="pox" title="title" style="width: 100px;height: 100px;">
+			<strong>强调</strong>
+			<em>呵呵</em>
+		</div>
+		<!--在末尾使用js-->
+		<script>
+			var boxNode = document.getElementById('box');
+			//tagName表示的是标签的名称
+			console.log(boxNode.tagName);
+			//元素节点的内容转成字符串输出
+			console.log( boxNode.innerHTML);
+			//获取属性节点的内容
+			console.log(boxNode.title);
+			//修改
+			boxNode.title = '我是超人';
+			console.log(boxNode.title);
+			//覆盖
+			boxNode.style.background = 'green';
+			console.log(boxNode.style.background);
+			//获取class的内容
+			console.log(boxNode.className);
+			boxNode.className = 'pox1';
+			console.log(boxNode.className);
+			
+			
+			/*
+			//获取文档的内部所有的样式表(document.styleSheets 返回的是一个数组)
+			//document.styleSheets[0] 取得所有内部样式表中的第一个样式表
+			var oSheet = document.styleSheets[0];
+			console.log(oSheet);
+			//在内部样式表当中取得第一个样式
+			var boxSheet = oSheet.cssRules[1];
+			console.log(boxSheet.style.background);
+			*/
+			
+		</script>
+	</body>
+</html>

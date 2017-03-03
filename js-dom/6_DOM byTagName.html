@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000;
+		      	}
+		</style>
+		<script>
+			onload = function(){
+				//获取所有的div元素节点
+				var divArr = document.getElementsByTagName('div');
+				console.log(divArr);
+				console.log(divArr.length);
+				console.log(divArr[1].innerHTML);
+				//console.log(divArr.item(2).innerHTML);
+
+				for(var index = 0 ; index < divArr.length;index++){
+					console.log(divArr[index].tagName);
+					console.log(divArr[index].innerHTML);
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<p>结束</p>
+	</body>
+</html>

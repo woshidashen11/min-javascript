@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			onload = function(){
+				
+				var boxNode = document.getElementById('box');
+				var oInput = document.getElementsByTagName('input')[0];
+				
+				oInput.onselect = function(){
+					
+					boxNode.innerHTML = '文本被选中';
+				}
+				
+				oInput.onchange = function(){
+					
+					boxNode.innerHTML = '文本被修改';
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" value="我是一个初始化字符串"/>
+		<div id="box" style="width: 200px;height: 200px;background: red;"></div>
+	</body>
+</html>

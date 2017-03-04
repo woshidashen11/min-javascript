@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {  margin: 0;  padding: 0;  }
+			
+			ul {
+				width: 102px;
+				list-style: none;
+				position: absolute;
+				left: 10px;
+				top: 10px;
+				display: none;
+			}
+			
+			ul li {
+				width: 100px;
+				line-height: 50px;
+				text-align: center;
+				background: gray;
+				border: 1px solid white;
+				cursor: pointer;
+			}
+		</style>
+		<script>
+			onload = function() {
+//				oncontextmenu = function() {
+//					console.log('右键被禁用');
+//					return false;
+//				};
+
+		//识别你使用的是右键
+		var boxNode = document.getElementById('box');
+		var listNode = document.getElementById('list');
+		boxNode.onmousedown = function(evt){
+			var oEvent = evt || event;
+			//判断为右键
+			if(oEvent.button == 2){
+				//显示
+				listNode.style.display = 'block';
+				listNode.style.left = oEvent.clientX + 'px';
+				listNode.style.top = oEvent.clientY + 'px';
+			}else if(oEvent.button == 0){
+				listNode.style.display = 'none';
+			}
+		};
+		var liArr = document.getElementsByTagName('li');
+		for(var i = 0; i<liArr.length;i++){
+			
+			//添加一个属性index
+			liArr[i].index = i;
+			//绑定点击事件
+			liArr[i].onclick = function(){
+				console.log(this.innerHTML);
+				console.log(this.index);
+				
+			}
+			
+		}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box" style="width: 500px;height: 500px;background: red;margin: 0 auto;">
+
+			<ul id="list">
+				<li>剪切</li>
+				<li>复制</li>
+				<li>粘贴</li>
+			</ul>
+
+		</div>
+	</body>
+
+</html>

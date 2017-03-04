@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="Cookie.js" ></script>
+		<script>
+			
+			var date = new Date();
+			date.setDate(date.getDate() + 7);
+			
+			//保存用户名密码
+			setCookie('game1','地下城',date);
+			setCookie('game2','诛仙',date);
+			setCookie('game3','皇室战争',date);
+			
+			
+			//获取
+			console.log(getCookie('game2'));
+			
+			//删除
+			removeCookie('game1');
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

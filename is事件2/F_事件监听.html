@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			onload = function(){
+				var oInput = document.getElementsByTagName('input')[0];
+				function tips(){
+					console.log('点击事件!');
+				}
+				//添加事件监听（绑定事件）
+				oInput.addEventListener('click',tips,false);
+				var tInput = document.getElementsByTagName('input')[1];
+				tInput.onclick = function(){
+					//移除第一个按钮的点击事件
+					oInput.removeEventListener('click',tips);
+				}
+			}
+		</script>
+		
+	</head>
+	<body>
+		<input type="button" value="点击按钮" />
+		<input type="button" value="移除第一个按钮的事件监听" />
+	</body>
+</html>

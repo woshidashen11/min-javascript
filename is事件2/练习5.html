@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			onload = function() {
+
+				onkeydown = function(evt) {
+
+					var oEvent = evt || event;
+					var boxNode = document.getElementById('box');
+
+					if(oEvent.ctrlKey && oEvent.keyCode == 67) {
+
+						boxNode.style.background = 'orange';
+                         console.log('hh')
+					} else if(oEvent.ctrlKey && oEvent.shiftKey && oEvent.keyCode == 82) {
+
+						boxNode.style.background = 'red';
+
+					}
+
+					if(oEvent.ctrlKey) {
+
+						switch(oEvent.keyCode) {
+							case 38:
+								boxNode.style.top = parseInt(boxNode.style.top) - 15 + 'px';
+								break;
+							case 40:
+								boxNode.style.top = parseInt(boxNode.style.top) + 15 + 'px';
+								break;
+							case 37:
+								boxNode.style.left = parseInt(boxNode.style.left) - 15 + 'px';
+								break;
+							case 39:
+								boxNode.style.left = parseInt(boxNode.style.left) + 15 + 'px';
+								break;
+							default:
+
+						}
+
+						return;
+					}
+
+					switch(oEvent.keyCode) {
+						case 38:
+							boxNode.style.top = parseInt(boxNode.style.top) - 5 + 'px';
+							break;
+						case 40:
+							boxNode.style.top = parseInt(boxNode.style.top) + 5 + 'px';
+							break;
+						case 37:
+							boxNode.style.left = parseInt(boxNode.style.left) - 5 + 'px';
+							break;
+						case 39:
+							boxNode.style.left = parseInt(boxNode.style.left) + 5 + 'px';
+							break;
+						default:
+
+					}
+
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box" style="width: 100px;height: 100px;background: red;
+		position: absolute; left: 100px;top: 100px;"></div>
+	</body>
+
+</html>

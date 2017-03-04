@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#phone {
+				width: 426px;
+				height: 640px;
+				background: url(img/images1/iphone.jpg);
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			#box {
+				width: 365px;
+				height: 62px;
+				position: absolute;
+				top: 545px;
+				left: 30px;
+			}
+			
+			#lock {
+				width: 93px;
+				height: 62px;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				background: url(img/images1/unlock_btn.jpg);
+				border-radius: 10px;
+				cursor: pointer;
+			}
+		</style>
+		<script>
+			onload = function() {
+				var phoneNode = document.getElementById('phone');
+				var boxNode = document.getElementById('box');
+				var lockNode = document.getElementById('lock');
+				lockNode.onmousedown = function(evt) {
+					var oEvent = evt || event;
+					//起始拖拽位置到目标对象左边界的距离
+					var disX = oEvent.offsetX;
+					console.log(disX)
+					boxNode.onmousemove = function(evt) {
+						var oEvent = evt || event;
+						//设置lockNode的位置
+						lockNode.style.left = oEvent.clientX - phoneNode.offsetLeft - boxNode.offsetLeft - disX + 'px';
+						var x = parseInt(lockNode.style.left);
+						//判断不能超过左边界
+						if(x <= 0) {
+							lockNode.style.left = 0;
+						} else if(x >= boxNode.offsetWidth - lockNode.offsetWidth) {
+
+							lockNode.style.left = boxNode.offsetWidth - lockNode.offsetWidth + 'px';
+						}
+					}
+					boxNode.onmouseup = function(evt){
+						boxNode.onmousemove = null;
+						boxNode.onmouseup = null;
+
+						var oEvent = evt || event;
+
+						//判断是否超过一半
+						lockNode.style.left = oEvent.clientX - phoneNode.offsetLeft - boxNode.offsetLeft - disX + 'px';
+						var x = parseInt(lockNode.style.left);
+
+						if(x > (boxNode.offsetWidth - lockNode.offsetWidth)/2){
+
+							//置于右侧
+							lockNode.style.left = boxNode.offsetWidth - lockNode.offsetWidth + 'px';
+
+
+						}else{
+
+							lockNode.style.left = 0;
+
+						}
+
+					}
+
+				}
+
+			}
+		</script>
+	</head>
+	<body>
+		<div id="phone">
+			<div id="box">
+				<div id="lock"></div>
+			</div>
+		</div>
+	</body>
+
+</html>

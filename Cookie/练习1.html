@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			
+			div{
+				width: 10px;
+				height: 10px;
+				background: red;
+				position: absolute;
+				left: 10px;
+				right: 10px;
+				border: 1px solid blue;
+				font-size: 10px;
+			}
+			
+		</style>
+		<script>
+			
+			onload = function(){
+				
+				var divArr = document.getElementsByTagName('div');
+				
+				document.onmousemove = function(evt){
+					
+					var oEvent = evt || event;
+					
+					//0永远都是跟着鼠标的最新位置
+					divArr[0].style.left = oEvent.clientX + 'px';
+					divArr[0].style.top = oEvent.clientY + 'px';
+					
+					for(var i = divArr.length - 1;i > 0;i--){
+						
+						//依次替换位置
+						divArr[i].style.left = divArr[i - 1].style.left;
+						divArr[i].style.top = divArr[i - 1].style.top;
+						
+					}
+					
+					
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div>0</div>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>	
+	</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			#box{
+				
+				width: 200px;
+				height: 200px;
+				background: red;
+				position:absolute;
+				left: 10px;
+				top: 10px;
+			}
+			
+			#subBox{
+				
+				height: 30px;
+				background: purple;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			
+			onload = function(){
+				
+				var subBox = document.getElementById('subBox');
+				var box = document.getElementById('box');
+				subBox.onmousedown = function(evt){
+					
+					var oEvent = evt || event;
+					
+					//获得样式
+					var boxStyle = getComputedStyle(box,null);
+					var disX = oEvent.clientX - parseInt(boxStyle.left);
+					var disY = oEvent.clientY - parseInt(boxStyle.top);
+					
+					document.onmousemove = function(evt){
+						
+						var oEvent = evt || event;
+						
+						box.style.left = oEvent.clientX - disX + 'px';
+						box.style.top = oEvent.clientY - disY + 'px';
+						
+					}
+					
+					document.onmouseup = function(){
+						
+						document.onmousemove = null;
+						document.onmouseup = null;
+						
+						
+					}
+					
+				}
+				//关闭广告
+				var oInput = subBox.getElementsByTagName('input')[0];
+				oInput.addEventListener('click',function(){
+					
+					box.style.display = 'none';
+					
+				},false);
+			
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="box" >
+			<div id="subBox">
+				<input type="button" value="关闭"/>
+			</div>
+		</div>
+	</body>
+</html>

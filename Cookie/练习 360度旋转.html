@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+	onload = function(){
+		
+		//快速切换图片，相当于是动画，帧数（1秒切换24张图）
+		
+		var imgNode = document.getElementsByTagName('img')[0];
+		
+		//记录显示的图片下标
+		var imgIndex = 0
+		document.onmousedown = function(evt){
+			
+			var oEvent = evt || event;
+			
+			//如何判断左滑动还是右滑动
+			//滑动的距离
+			//每滑动10px切换一张图片
+			
+			//记录鼠标点击时所在的位置
+			var orignalX = oEvent.clientX;
+			
+			document.onmousemove = function(evt){
+				
+				var oEvent = evt || event;
+				
+				//获取最新的坐标点
+				//计算相差的总像素
+				var distance =  orignalX - oEvent.clientX;
+				
+				//改变显示的图片
+				//
+				var tempIndex = (77 * 10000 + (parseInt( distance/10 ) + imgIndex)) % 77;
+				
+				imgNode.src = 'img/images4/' + tempIndex + '.jpg';
+				
+			}
+			
+			document.onmouseup = function(){
+				
+				document.onmousemove = null;
+				document.onmouseup = null;
+				
+				//记录鼠标松开时，显示的图片
+				var arr = imgNode.src.split(/[\/.]/);
+				imgIndex = parseInt(arr[arr.length - 2]);
+			}
+			
+		}
+		
+		
+	}
+			
+		</script>
+	</head>
+	<body>
+		<img src="img/images4/0.jpg" alt="" style="width: 640px;height: 378px;"/>
+	</body>
+</html>

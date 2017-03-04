@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        <!--放大镜, 移动鼠标, 在小图上移动时显示大图,并跟随鼠标移动, 当不在小图上时, 隐藏大图 , 效果如下图-->
+        onload = function(){
+              var imgNode=document.getElementsByTagName('img');
+              var lastNode=document.getElementById('last');
+            for (var i=0;i<imgNode.length;i++){
+              imgNode[i].onmousemove=function(evt){
+                  var oEvent=evt||event;
+                      var newSrc=this.src.replace('shirt_1','bbig_1');
+                    lastNode.src=newSrc;
+                     lastNode.style.display='block';
+                    lastNode.style.left=oEvent.clientX+'px';
+                    lastNode.style.top=oEvent.clientY+'px';
+
+                  };
+                imgNode[i].onmouseout = function() {
+
+                    lastNode.style.display = 'none';
+                }
+              }
+
+        }
+    </script>
+    <style>
+        #box {margin:0 auto;width: 800px;height: 600px;border: 1px solid lightgray;float:none;}
+        img {float: left;}
+        #last {width: 400px;height:400px;display: none;position: absolute;left:0px;top:0px;}
+    </style>
+</head>
+<body>
+<div id="box">
+<img src="img/shirt_1.jpg">
+<img src="img/shirt_2.jpg">
+<img src="img/shirt_3.jpg">
+<img src="img/shirt_4.jpg">
+<img src="img/bbig_1.jpg"  id="last">
+</div>
+</body>
+</html>

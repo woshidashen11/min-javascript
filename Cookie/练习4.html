@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        onload=function(){
+            var box1Node=document.getElementById('box1');
+            var boxNode=document.getElementById('box2');
+            var lockNode=document.getElementById('box3');
+
+            lockNode.onmousedown=function(evt){
+                var oElement=evt||event;
+                var disX=oElement.offsetX;
+
+                boxNode.onmousemove=function(evt){
+                    var oElement=evt||event;
+                    lockNode.style.left=oElement.clientX-box1Node.offsetLeft-boxNode.offsetLeft-disX+'px';
+                    var x=parseInt(lockNode.style.left);
+                if(x<=0){
+                    lockNode.style.left=0;
+                }else if(x>boxNode.offsetWidth-lockNode.offsetWidth){
+                    lockNode.style.left=boxNode.offsetWidth-lockNode.offsetWidth+ 'px';
+                }
+                };
+                boxNode.onmouseup=function(evt){
+                    var oElement=evt||event;
+                   boxNode.onmousemove=null;
+                    boxNode.onmouseup=null;
+
+                   lockNode.style.left=oElement.clientX-box1Node.offsetLeft-boxNode.offsetLeft-disX+'px';
+                    var y=parseInt( lockNode.style.left);
+                    if(y>(boxNode.offsetWidth-lockNode.offsetWidth)/2){
+                        lockNode.style.left=boxNode.offsetWidth-lockNode.offsetWidth+ 'px';
+                    }else{
+                        lockNode.style.left=0;
+                    }
+                }
+            }
+
+        }
+    </script>
+    <style>
+        #box1 {width: 426px;height:640px;background: url("img/images1/iphone.jpg");
+                margin: 0 auto;position: relative;}
+        #box2 {width: 365px; height: 62px;position: absolute;top: 545px; left: 30px;}
+        #box3 {width: 93px;height:62px;background:url("img/images1/unlock_btn.jpg");
+                border-radius: 10px;position:absolute;left:0px;top:0px; }
+
+    </style>
+</head>
+<body>
+<div id="box1">
+    <div id="box2">
+        <div id="box3" ></div>
+    </div>
+</div>
+</body>
+</html>

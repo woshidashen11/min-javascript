@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			onload = function(){
+				
+				var divNode = document.getElementById('box');
+//				首先给div目标对象添加onmousedown事件
+				divNode.onmousedown = function(evt){
+					var oEvent = evt || event;
+					
+					//计算disX：起始点击的位置距离目标左边界的距离
+					//计算disY：起始点击的位置距离目标上边界的距离
+					var disX = oEvent.clientX - parseInt(divNode.style.left);
+					var disY = oEvent.clientY - parseInt(divNode.style.top);
+					console.log(disX,disY)
+				
+					//给div目标对象添加onmousemove事件
+					document.onmousemove = function(evt){
+						var oEvent = evt || event;
+						//不断修改div节点的位置
+						divNode.style.left = oEvent.clientX - disX + 'px';
+						divNode.style.top = oEvent.clientY - disY + 'px';
+					};
+					//给div目标对象添加onmouseup事件
+					document.onmouseup = function(){
+						
+						//取消事件
+						document.onmousemove = null;
+						document.onmouseup = null;
+						
+					}
+					
+				}
+}
+			
+		</script>
+	</head>
+	<body>
+		<div id="box" style="width: 100px;height: 100px;background: cyan;position: absolute;left: 10px;top: 10px;"></div>
+	</body>
+</html>

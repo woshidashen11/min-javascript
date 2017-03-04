@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		
+			//格式：name=value;[expires=date];[path=路径];[domain=域名];[secure]
+			
+			//设置cookie
+//			document.cookie = 'name=成龙';
+//          document.cookie='name='+'莫小慧';
+
+
+			//对数据进行转码
+//			 var str = 'name=' + encodeURIComponent('成龙');
+//			console.log(str);
+//			//解码
+//            	console.log(decodeURIComponent(str));
+			//用户名
+//			 document.cookie = str;
+//			//密码
+//			document.cookie = 'password=' + encodeURIComponent('ABCD123默默');
+//			console.log(typeof (document.cookie));
+//			console.log(document.cookie);
+//			console.log(decodeURIComponent(document.cookie));
+
+			
+//		     var date = new Date();
+//
+//			date.setDate(date.getDate() + 7);
+//			document.cookie = 'name=' + encodeURIComponent('郑爽') + ';expires=' + date;
+//			console.log(decodeURIComponent(document.cookie));
+
+			//删除password这部分内容
+			
+			//当前时间
+			//删除cookie里面的数据，主要通过失效时间控制
+//			var date = new Date();
+//			document.cookie = 'password=' + encodeURIComponent('') + ';expires=' + date;
+
+			
+//			 路径
+			var date = new Date();
+			date.setDate(date.getDate() + 7);
+			document.cookie = 'name=' + '毛主席' + 
+								';expires=' + date + ';path=/aaa';
+			console.log(decodeURIComponent(document.cookie));
+			
+			
+			/*
+			var date = new Date();
+			date.setDate(date.getDate() + 7);
+			document.cookie = 'name=' + encodeURIComponent('毛主席') + ';domain=baidu.com';
+			console.log(decodeURIComponent(document.cookie));
+			*/
+			
+			//添加了secure表示只有https才可以访问
+//			var date = new Date();
+//			date.setDate(date.getDate() + 7);
+//			document.cookie = 'user=' + encodeURIComponent('毛主席') + ';secure';
+//			console.log(decodeURIComponent(document.cookie));
+//
+			var date = new Date();
+			 date.setDate(date.getDate()+7);
+			 document.cookie = 'username='+encodeURIComponent('默默')+';expires='+date+';path=/nnnnn';
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

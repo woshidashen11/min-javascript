@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				width: 100px;
+				height: 100px;
+				background: purple;
+			}
+		</style>
+		<script type="text/javascript">
+			onload = function() {
+
+			//	var boxNode = document.getElementById('box');
+//				console.log(boxNode.style.width);
+//
+//				var styleArr = document.styleSheets;
+//				var css = styleArr[0].cssRules[0];
+//
+//				console.log(css.style.width)
+//				//修改
+//				css.style.width = '200px';
+
+				var boxNode = document.getElementById('box');
+				//只能用，不能改
+				//window.getComputedStyle(boxNode,null).width = '200px';
+				if(window.getComputedStyle) {
+					console.log(window.getComputedStyle(boxNode, null).width)
+				} else {
+					console.log(boxNode.currentStyle.width);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box">
+
+		</div>
+	</body>
+
+</html>

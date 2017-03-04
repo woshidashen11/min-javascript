@@ -14,23 +14,24 @@
 //					console.log(arguments[0]);
 //				}
 
-//				inputNode.onclick = function(evt){
-//
-//					//IE 6 7支持window.event,但不支持evt
-//					//FF 支持evt 但不支持window.event
-//					//获取事件对象
-//					var nEvent = evt || event;
-//					console.log(nEvent);
-//				};
-				
-				inputNode.onmousedown = function(evt){
+				inputNode.onclick = function(evt){
 
 					//IE 6 7支持window.event,但不支持evt
 					//FF 支持evt 但不支持window.event
 					//获取事件对象
 					var nEvent = evt || event;
-					console.log(nEvent.button);
-				}
+					console.log(nEvent);
+				};
+
+				
+//				inputNode.onmousedown = function(evt){
+//
+//					//IE 6 7支持window.event,但不支持evt
+//					//FF 支持evt 但不支持window.event
+//					//获取事件对象
+//					var nEvent = evt || event;
+//					console.log(nEvent.button);
+//				}
 				
 //				onclick = function(evt){
 //					var nEvent = evt || event;

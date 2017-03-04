@@ -8,35 +8,22 @@
             //1, 鼠标点击某处, 让精灵移动到该处 (如下图)
             //2, 鼠标移动时, 让精灵跟随鼠标移动
             onload=function(){
-                var idNode=document.getElementById('img1');
-//                    onclick = function(evt){
-//					      var nEvent = evt || event;
-//					      var a=nEvent.clientX;
-//                        var b=nEvent.clientY;
-//                        idNode.style.marginTop=b-110+'px';
-//                        idNode.style.marginLeft=a-115+'px';
-//				};
+            	
+//       var idNode=document.getElementById('img1');
+//          idNode.onmousemove=function(evt){
+//              var oEvent=evt||event;
+//              idNode.style.left=oEvent.clientX-100+'px';
+//              idNode.style.top=oEvent.clientY-100+'px';
+//          }
 
-//                onmousemove = function(evt){
-//                    var nEvent = evt || event;
-//                    var a=nEvent.clientX;
-//                    var b=nEvent.clientY;
-//                    idNode.style.marginTop=b-110+'px';
-//                    idNode.style.marginLeft=a-115+'px';
-
-                    idNode.onmousemove=function(evt){
-                        var oEvent=evt||event;
-                        idNode.style.left=oEvent.clientX-100+'px';
-                        idNode.style.top=oEvent.clientY-100+'px';
-                    }
-           };
 
             </script>
-            <style>
-                body {background: #000;}
-                #img1 {position: absolute;top:10px;left:10px;}
-            </style>
+<style>
+    body {background: #000;}
+    #img1 {position: absolute;top:10px;left:10px;}
+</style>
+            
 <body id="bod">
-          <div id="img1"><img src="img/girl.gif"></div>
+      <div id="img1"><img src="img/girl.gif"></div>
 </body>
 </html>

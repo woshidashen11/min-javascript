@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul {
+				width: 100px;
+				list-style: none;
+				display: none;
+				background: green;
+			}
+			
+			ul li {
+				width: 100px;
+				/*height: 50px;*/
+				border-bottom: 1px dashed white;
+				background: #000;
+				color: white;
+				text-align: center;
+				line-height: 50px;
+			}
+		</style>
+		<script>
+			onload = function() {
+
+				var oInput = document.getElementsByTagName('input')[0];
+				var listNode = document.getElementById('list');
+				var liArr = document.getElementsByTagName('li');
+
+//				oInput.onmousemove = function() {
+//
+//					//显示菜单
+//					listNode.style.display = 'block';
+//				}
+//
+//				listNode.onmouseover = function() {
+//
+//					listNode.style.display = 'block';
+//
+//				}
+//
+//				listNode.onmouseout = function() {
+//
+//						listNode.style.display = 'none';
+//
+//				} 
+//					//外界进入到ul，ul进入到li
+//					//li到ul，ul到外界
+//					//li 之间切换 ，实际也经过了ul节点
+//
+//				//循环绑定事件
+//				for (var i = 0; i < liArr.length; i++) {
+//
+//					//进入一个区域
+//					liArr[i].onmouseover = function() {
+//
+//						console.log('li-over');
+//
+//						//当前区域选中
+//						this.style.background = 'lightgray';
+//
+//					}
+//
+//					liArr[i].onmouseout = function() {
+//
+//						console.log('li-out');
+//						//当前区域选中
+//						this.style.background = 'black';
+//					}
+//
+//					liArr[i].onclick = function() {
+//
+//						oInput.value = this.innerHTML;
+//					}
+//
+//				}
+
+		</script>
+	</head>
+
+	<body>
+		<input type="text" value="请选择游戏" />
+		<ul id="list">
+			<li>魔兽世界</li>
+			<li>梦幻西游</li>
+			<li>天龙八部</li>
+			<li>穿越火线</li>
+			<li>英雄联盟</li>
+		</ul>
+	</body>
+
+</html>

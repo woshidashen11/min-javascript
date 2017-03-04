@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			onload = function() {
+
+				var inputArr = document.getElementsByTagName('input')
+
+				//falg1表示保存用户名检验的结果
+				var flag1 = false;
+				//falg2表示保存密码检验的结果
+				var flag2 = false;
+
+				//失去焦点
+				inputArr[0].onblur = function() {
+					//检测用户名
+					var username = inputArr[0].value;
+					//检测是否至少6位而且只能为字符和数字
+					if(username.length < 6) {
+
+						alert('用户名长度有误!');
+						flag1 = false;
+						return;
+					} else {
+						
+						/*
+						for(var i = 0; i < username.length; i++) {
+							
+							if(!(username[i] >= '0' && username[i] <= '9' ||
+									username[i] >= 'a' && username[i] <= 'z' ||
+									username[i] >= 'A' && username[i] <= 'Z')) {
+
+								alert('使用了非法字符!');
+								flag1 = false;
+								return;
+							}
+						}*/
+						var result = /^[0-9A-Za-z]*$/.test(username);
+						
+						if(result == false){
+							
+							alert('使用了非法字符!');
+							flag1 = result;
+							return;
+							
+						}
+
+					}
+					//用户名失去焦点方法的最末尾
+					flag1 = true;
+				}
+
+				//检测密码
+				inputArr[1].onblur = function() {
+					var password = inputArr[1].value;
+					if(password.length < 8) {
+
+						alert('密码长度有误!');
+						flag2 = false;
+						
+						return;
+					}
+					//密码失去焦点方法的最末尾
+					flag2 = true;
+				}
+
+				inputArr[2].onclick = function() {
+
+					if(flag1 && flag2) {
+
+						alert('username:' + inputArr[0].value + ',' + 'password:' + inputArr[1].value);
+					}else{
+						alert('请检验格式');
+					}
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="text" placeholder="用户名" />
+		<input type="text" placeholder="密码" />
+		<input type="button" value="登录" />
+
+	</body>
+
+</html>

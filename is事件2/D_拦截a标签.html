@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			onload = function(){
+				
+				var aNode = document.getElementsByTagName('a')[0];
+				aNode.onclick = function(){
+					return confirm('确定充值么');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<a href="http://www.baidu.com">跳转</a>
+	</body>
+</html>

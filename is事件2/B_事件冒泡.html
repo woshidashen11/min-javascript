@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			onload = function() {
+
+				var boxNode = document.getElementById('box');
+				var oInput = document.getElementsByTagName('input')[0];
+				var oBody = document.getElementsByTagName('body')[0];
+
+//			window.onclick = function(){
+//				
+//				console.log('window');
+//			}
+//			
+//			document.onclick = function(){
+//				
+//				console.log('document');
+//			}
+//			
+//			oBody.onclick = function(){
+//				
+//				console.log('oBody');
+//			}
+				
+				
+				
+//		oBody.onclick = function(evt){
+//			var oEvent = evt || event;
+//			console.log('target:');
+//			console.log(oEvent.target);
+//			
+//			console.log('this:');
+//			console.log(this);
+//		}
+		
+		//事件的冒泡：事件会从里到外发生传递
+		//target：真正触发这个事件的对象
+//		boxNode.onclick = function(evt){
+//			
+//			var oEvent = evt || event;
+//			
+//			console.log('target:');
+//			console.log(oEvent.target);
+//			
+//			console.log('this:');
+//			console.log(this);
+//			
+//		}
+		
+//		oInput.onclick = function(evt){
+//			
+//			var oEvent = evt || event;
+//			
+//			console.log('target:');
+//			console.log(oEvent.target);
+//			
+//			console.log('this:');
+//			console.log(this);
+//			
+//		}
+				
+
+//		oBody.onclick = function(evt){
+//			var oEvent = evt || event;
+//			console.log(this);
+//		}
+		//事件的冒泡：事件会从里到外发生传递
+		//target：真正触发这个事件的对象
+//		boxNode.onclick = function(evt){
+//			
+//			var oEvent = evt || event;
+//			
+//			//阻止冒泡
+//			oEvent.cancelBubble = true;
+//			//oEvent.stopPropagation();//不支持IE
+//			
+//			console.log(this);
+//			
+//		}
+
+				oInput.onclick = function(evt){
+					
+					var oEvent = evt || event;
+					
+					//阻止冒泡
+					//oEvent.cancelBubble = true;
+					//oEvent.stopPropagation();//不支持IE
+					
+					console.log(this);
+					
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<div id="box" style="width: 200px;height: 200px;background: red;">
+			<input type="button" value="点击" />
+		</div>
+
+	</body>
+
+</html>

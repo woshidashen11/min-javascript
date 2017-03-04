@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			*{
+				margin: 0;
+				padding: 0;
+
+			}
+
+			ul{
+				list-style: none;
+				width: 728px;
+			}
+
+			ul li{
+
+				margin-left: 10px;
+				border: 1px solid blue;
+				float: left;
+			}
+
+			img{
+				width: 170px;
+				height: 170px;
+
+			}
+
+			#show{
+				width: 400px;
+				height: 400px;
+				display: none;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+
+		</style>
+		<script>
+
+			onload = function(){
+
+				var imgArr = document.getElementsByTagName('img');
+				var showNode = document.getElementById('show');
+
+				for(var i = 0;i < imgArr.length - 1;i++){
+
+					imgArr[i].onmouseover = function(){
+
+						//this.parentNode 父节点
+						this.parentNode.style.border = '1px solid red';
+
+						showNode.style.display = 'block';
+
+						//替换
+						showNode.src = this.src.replace('.jpg','_big.jpg');
+
+					}
+
+					imgArr[i].onmousemove = function(evt){
+
+						var oEvent = evt || event;
+
+						showNode.style.left = oEvent.clientX + 10 + 'px';
+						showNode.style.top = oEvent.clientY + 10 + 'px';
+
+
+
+					}
+
+					imgArr[i].onmouseout = function(){
+
+						//this.parentNode 父节点
+						this.parentNode.style.border = '1px solid blue';
+
+						showNode.style.display = 'none';
+					}
+
+				}
+
+
+			}
+			
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li><img src="img/images2/shirt_1.jpg" alt="" /></li>
+			<li><img src="img/images2/shirt_2.jpg" alt="" /></li>
+			<li><img src="img/images2/shirt_3.jpg" alt="" /></li>
+			<li><img src="img/images2/shirt_4.jpg" alt="" /></li>
+		</ul>
+		<img id="show" src="img/images2/shirt_1_big.jpg" alt="" />
+	</body>
+</html>

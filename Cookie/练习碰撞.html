@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				width: 500px;
+				height: 500px;
+				margin: 0 auto;
+				background: lightgray;
+				position: relative;
+			}
+			
+			#box div {
+				width: 10px;
+				height: 10px;
+				position: absolute;
+			}
+			
+			#red {
+				background: red;
+			}
+			
+			#blue {
+				background: blue;
+			}
+		</style>
+		<script>
+			onload = function() {
+
+				var redNode = document.getElementById('red');
+				var blueNode = document.getElementById('blue');
+
+				//修改位置
+				//每次的增加量
+				var tempRedX = Math.floor(Math.random() * 10 + 1);
+				var tempRedY = Math.floor(Math.random() * 10 + 1);
+				
+				//分别控制X和Y方向的变量
+				var redDX = 1;
+				var redDY = 1;
+
+				var tempblueX = Math.floor(Math.random() * 10 + 1);
+				var tempblueY = Math.floor(Math.random() * 10 + 1);
+
+				var blueDX = 1;
+				var blueDY = 1;
+
+				var timer = setInterval(function() {
+
+					redNode.style.left = parseInt(redNode.style.left) + tempRedX * redDX + 'px';
+					redNode.style.top = parseInt(redNode.style.top) + tempRedY * redDY + 'px';
+
+					//判断x边界
+					if(parseInt(redNode.style.left) >= 490 || parseInt(redNode.style.left) <= 0) {
+
+						//变方向
+						redDX *= -1;
+					}
+					
+					//判断y边界
+					if(parseInt(redNode.style.top) >= 490 || parseInt(redNode.style.top) <= 0) {
+
+						//变方向
+						redDY *= -1;
+					}
+
+					blueNode.style.left = parseInt(blueNode.style.left) + tempblueX * blueDX + 'px';
+					blueNode.style.top = parseInt(blueNode.style.top) + tempblueY * blueDY + 'px';
+					
+					//判断x边界
+					if(parseInt(blueNode.style.left) >= 490 || parseInt(blueNode.style.left) <= 0) {
+
+						//变方向
+						blueDX *= -1;
+					}
+					
+					//判断y边界
+					if(parseInt(blueNode.style.top) >= 490 || parseInt(blueNode.style.top) <= 0) {
+
+						//变方向
+						blueDY *= -1;
+					}
+					
+				}, 10);
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box">
+			<div id="red" style="left:20px;top: 20px;"></div>
+			<div id="blue" style="left:480px;top: 480px;"></div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {margin:0 auto;width: 500px;height: 500px;background: cyan;position:relative;}
+        #box1 {width: 10px;height: 10px;background: blue;position: absolute;}
+        #box2 {width: 10px;height: 10px;background:red;position: absolute;}
+    </style>
+    <script>
+        onload=function(){
+            var boxNode=document.getElementById('box');
+            var blueNode=document.getElementById('box1');
+            var redNode=document.getElementById('box2');
+
+                    var tempBlueX=Math.floor(Math.random()*10+1);
+                    var tempBlueY=Math.floor(Math.random()*10+1);
+                    var tempRedX=Math.floor(Math.random()*10+1);
+                    var tempRedY=Math.floor(Math.random()*10+1);
+                          var redX=1;
+                          var redY=1;
+                          var blueX=1;
+                          var blueY=1;
+
+
+             var timer=setInterval(function(){
+
+                       blueNode.style.left=parseInt(blueNode.style.left)+tempBlueX*blueX+'px';
+                       blueNode.style.top=parseInt(blueNode.style.top)+tempBlueY*blueY+'px';
+                    if(parseInt(blueNode.style.left)<=0||parseInt(blueNode.style.left)>=490){
+                        blueX*=-1;
+                    }
+                     if(parseInt(blueNode.style.top)<=0||parseInt(blueNode.style.top)>=490){
+                         blueY*=-1;
+                    }
+
+                 redNode.style.left=parseInt(redNode.style.left)+tempRedX*redX+'px';
+                 redNode.style.top=parseInt(redNode.style.top)+tempRedY*redY+'px';
+                 if(parseInt(redNode.style.left)<=0||parseInt(redNode.style.left)>=490){
+                     redX*=-1;
+                 }
+                 if(parseInt(redNode.style.top)<=0||parseInt(redNode.style.top)>=490){
+                     redY*=-1;
+                 }
+
+           },10)
+
+        }
+    </script>
+
+</head>
+<body>
+<div id="box">
+    <div id="box1" style="left:10px;top:10px;"></div>
+    <div id="box2" style="left:300px;top:430px;"></div>
+</div>
+</body>
+</html>

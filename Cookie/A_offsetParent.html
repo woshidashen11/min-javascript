@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			onload = function(){
+				
+				var box1Node = document.getElementById('box1');
+				var box2Node = document.getElementById('box2');
+				var box3Node = document.getElementById('box3');
+				
+				
+				//offsetLeft类似style.left; offsetTop类似style.top
+				console.log('offsetLeft:' + box1Node.offsetLeft +','+ 'offsetTop:' +box1Node.offsetTop);
+				console.log(box1Node.offsetParent);
+				console.log('offsetLeft:' + box2Node.offsetLeft +','+ 'offsetTop:' +box2Node.offsetTop);
+				console.log(box2Node.offsetParent);
+				console.log('offsetLeft:' + box3Node.offsetLeft +','+ 'offsetTop:' +box3Node.offsetTop);
+				console.log(box3Node.offsetParent);
+				
+				
+				box3Node.onclick = function(evt){
+					
+					var oEvent = evt || event;
+					
+//					console.log(this.offsetWidth);//this.style.width;
+					//offsetX:鼠标点击的位置的x坐标到目标对象的左边界的距离
+					console.log('x:'+ oEvent.offsetX);
+					//offsetY:鼠标点击的位置的y坐标到目标对象的上边界的距离
+					console.log('y:' + oEvent.offsetY);
+					
+				}
+				
+				
+			}
+			
+		</script>
+	</head>
+	<body style="margin: 0;">
+		<div id="box1" style="overflow: hidden; width: 500px;height: 500px;background: red; margin-left: 10px;margin-top: 15px;">
+			<div id="box2" style="overflow: hidden;width: 300px;height: 300px;background: orange;margin-left: 10px;margin-top: 15px;position:  relative;">
+				<div id="box3" style="overflow: hidden;width: 100px;height: 100px;background: cyan;margin-left: 10px;margin-top: 15px;"></div>
+			</div>
+		</div>
+	</body>
+</html>

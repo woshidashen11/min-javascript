@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+  <style>
+body {
+	font-family:"微软雅黑";
+	font-size:12px;
+  }
+#zhuyi {
+	font-size:12px;
+	color:yellow;
+  }
+#yonghu{
+	color:#2d95ff;
+  }
+#box {
+		
+		background:#393737;
+		width:450px;
+		height:500px;
+		padding-left:50px;
+		padding-top:40px;
+		position:absolute;
+ }
+span {
+	color:#fff;
+	margin-right:30px;
+	font-size:12px;
+}
+b{
+	color:red;
+}
+input {
+	margin-left:5px;
+}
+#btn {
+	width:60px;
+	height:20px;
+	color:#fff;
+	background:#1e8cfc;
+	text-align:center;
+	border:1px solid #77baff;
+	margin-left:50px;
+	line-height:16px;
+}
+#ziti{
+	color:#fff;
+}
+#yhm {
+	width:140px;
+	height:20px;
+	background:#fff9b4;
+	color:#000;
+	position:fixed;
+	z-index:2;
+	top:40px;
+	left:200px;
+	text-align:center;
+	display:none;
+}
+#mia {
+	width:140px;
+	height:20px;
+	background:#fff9b4;
+	color:#000;
+	position:fixed;
+	z-index:2;
+	top:40px;
+	left:200px;
+	text-align:center;
+	display:none;
+
+}
+#yanz{
+	width:20px;
+	height:20px;
+	display:none;
+}
+#oyzm {
+	width:40px;
+}
+#suij {
+	border:1px solid #ccc;
+	width:40px;
+	height:20px;
+	margin-left:10px;
+	background:#fff;
+	color:#000;
+}
+
+ </style>
+
+<script>
+
+window.onload = function(){
+
+	var oUsrname = document.getElementById("username");
+	var oyhm = document.getElementById("yhm");
+
+	oUsrname.onblur = function(){
+		//账号验证
+		var str1 = oUsrname.value;
+
+		var reg1 = /^\w{8,}$/ 
+
+		var uname = reg1.test(str1)
+
+		if(uname == false){
+
+			oyhm.style.display = "block";	
+		}
+		if(uname == true){
+
+			oyhm.style.display = "none";	
+		}
+		}
+		//密码验证
+
+		var oPassword =  document.getElementById("password");
+		var omia = document.getElementById("mia");
+		var oPasswodr2 = document.getElementById("password2");
+		
+	oPassword.onblur = function(){
+
+			var str = oPassword.value;
+
+			var reg = /^\w{6,20}$/
+
+			var pass = reg.test(str);
+
+			if(pass == false){
+
+				alert("密码输入不对")	
+			}
+
+		}
+	//密码长度验证
+	oPasswodr2.onblur = function(){
+		
+			if(oPassword.value !== oPasswodr2.value ) {
+
+				alert("密码长度不一样")
+			}
+	}
+		//安全验证
+	var oyanz = document.getElementById("yanz")
+	
+	var str = oPasswodr2.value;
+
+	if(str.length >= 8){
+		
+		oyanz.style.display = "block"
+		
+		oyanz.style.background = "green";
+		
+	}
+
+	//电子邮箱验证
+
+	var oEmail = document.getElementById("e-mail");
+
+	oEmail.onblur = function(){
+
+		var str = oEmail.value;
+		var reg = /\w+@[a-zA-Z0-9]+\.[a-zA-Z]+/;
+		var aa = reg.test(str);
+
+		if(aa == false){
+			alert("请输入正确邮箱地址")
+		}
+	}
+
+	var oPhone = document.getElementById("phone");
+
+	oPhone.onblur = function(){
+		
+
+		var str = oPhone.value;
+
+		var reg = /^1[35678]\d{9}$/;
+
+		var aa = reg.test(str);
+
+		if(aa == false){
+
+			alert("请输入正确的手机号码")
+		}
+	}
+
+	//验证码生成：
+
+	var osuij = document.getElementById("suij");
+	var sum = ""
+	osuij.onclick = function(){
+			
+			for(var i = 0 ; i <4 ; i++){
+
+			var a = parseInt(10*Math.random())
+
+			sum += a;
+			}
+			
+			osuij.innerHTML = sum;
+
+			sum = "";
+	}
+	
+	//验证验证:
+	var oOyzm = document.getElementById("oyzm");
+
+	var b = osuij.innerHTML;
+
+	if(!sum == b){
+
+		alert("请输入正确的验证码")
+	}
+
+}
+
+
+</script>
+
+ </head>
+
+ <body>
+  <div id = "box">
+	<div id = "yhm">用户名不合法请求输入</div>
+	<span id = "zhuyi">注意*为必填项</span></br>
+	<p id = "yonghu">账户详细信息</p></br>
+	<span>用户名称&nbsp&nbsp&nbsp&nbsp&nbsp</span> <b>*</b><input type = "text" id = "username"/></br></br>
+	<span>登录密码&nbsp&nbsp&nbsp&nbsp&nbsp</span> <b>*</b><input type = "password" id = "password"/></br></br>
+	<span>重复登录密码</span><b>*</b><input type = "password" id = "password2"></br></br>
+	<span>密码安全级别</span><span id = "yanz" style = "background:red"></span>
+    <p id = "yonghu">个人信息</p>
+	<span>电子邮件&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><b>*</b><input type = "text" id = "e-mail"></br></br>
+	<span>真实姓名&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><b>*</b><input type = "text" id = "names"></br></br>
+	<span>中奖通知手机</span><b>*</b><input type = "text" id = "phone"></br></br>
+	<span>验证码&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><b>*</b><input type = "text" id = "oyzm"/><span id = "suij">1236</span></br></br></br>
+	<input type = "button" value = "注册" id = "btn">
+	<input type = "radio"><span id = "ziti">十天内免登录</span>
+	
+
+	
+
+	
+  </div>
+ </body>
+</html>

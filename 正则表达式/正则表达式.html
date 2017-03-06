@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			
+			
+//			//一个参数
+			var box = new RegExp('box');
+			console.log(box);
+			console.log(typeof(box));
+//			
+//			//两个参数
+//			var box = new RegExp('box','gi');
+//			console.log(box);
+//			console.log(typeof(box));
+			
+			
+		
+//			var box = 'This is a box BOx bOX';
+//			//制定匹配的正则表达式
+//			var pattern = /box/gi;
+//			console.log(pattern.test(box));
+//			console.log(pattern.exec(box));
+//			//g全局模式对match函数有影响：一直从头匹配到末尾
+//			console.log(box.match(pattern));
+			
+			
+			
+//			var str = '1goo1gle2';
+//			var pattern = /g...gle/;//.代表任意字符，除了\n 
+//			console.log(pattern.test(str));
+			
+			
+//			var str = '1goofsdfsdfsdfsfsdfsfsfsfsfsdf1gle2';
+//			var pattern = /g.*gle/;//*代表前面的字符可以多次出现 范围是[0 无穷大]
+//			console.log(pattern.test(str));
+			
+			
+//			var str = '1goofdsfsfdsdgle2';
+//			var pattern = /g[a-z]*gle/;//[a-z]代表任意字符，字符[a-z]
+//			console.log(pattern.test(str));
+			
+//			var str = '1goolgle2';
+//			var pattern = /g[^0-9]*gle/;//[^0-9]代表不能是0-9数字
+//			console.log(pattern.test(str));
+			
+//			var str = '1g8gle2';
+//			var pattern = /g[0-9]+gle/;//+代表前面的字符可以多次出现 范围是[1 无穷大]
+//			console.log(pattern.test(str));
+			
+//			var str = '1g____090__ddd______gle2';
+//			//[a-zA-Z0-9_] 代表可以取字符a-z,A-Z,0-9,下划线
+//			var pattern = /g\w+gle/;//\w就代表[a-zA-Z0-9_]
+//			console.log(pattern.test(str));
+			
+//			var str = '1g8gle2';
+//			var pattern = /g\d+gle/;//\d代表[0-9]
+//			console.log(pattern.test(str));
+			
+//			var str = '1gTTTgle2';
+//			var pattern = /g\D+gle/;//\D代表[^0-9]
+//			console.log(pattern.test(str));
+			
+//			var str = '1g99999gle2';
+//			var pattern = /g\d{3,5}gle/;//{3,}至少3个，{3}只有3个，{3,9}3到9个
+//			console.log(pattern.test(str));
+			
+			
+//			var str = '11g99999gle2';
+//			var pattern = /^\d{2,}/;//   字符串的起始位置必须先出现2个数字
+//			console.log(pattern.test(str))
+			
+//			var str = '11g99999gle2229';
+//			var pattern = /\d{4}$/;//   末尾必须是4个数字
+//			console.log(pattern.test(str))
+			
+			//从头匹配到末尾
+//			var str = '6goo3gle3';
+//			var pattern = /^\w+$/;//从头到尾必须出现a-z，A-Z,0-9,_中的一个字符串
+//			var pattern = /^\D+$/;//从头到尾都是非数字（至少出现一个非数字）
+//			console.log(pattern.test(str))
+			
+//			var str = 'a\nb';
+//			var pattern = /\s/;//\s匹配空格' '和回车'\n'
+//			console.log(pattern.test(str));
+			
+//			var str = 'googlefdsf google123134453google1434';
+//			var pattern = /google\b/g;
+//			console.log(pattern.test(str));
+//			console.log(pattern.exec(str));
+//			console.log(str.match(pattern));
+			
+//			var str = 'google baidu1 b1ing2';
+//			var pattern = /google|baidu|bing/g;//包括google或者baidu或者bing
+//			console.log(pattern.test(str));
+//			console.log(pattern.exec(str));
+//			console.log(str.match(pattern));
+			
+			//分组模式
+//			var str = '11212googlegooglegooglegoogle22321312';
+//			var pattern = /(google){4,8}/;
+//			console.log(pattern.test(str));
+//			//分组模式下exec返回的第一个参数代表匹配成功的字符串
+//			//分组模式下exec返回的第二个参数代表作为匹配的字符串
+//			console.log(pattern.exec(str));
+			
+			
+//			var str = 'this is 8fdsafasf8 fdsjlff8';
+//			var pattern = /8(.*)8/;
+//			console.log(pattern.test(str));
+//			console.log(str.match(pattern));//捕获匹配字符串
+			
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="Cookie.js"></script>
+		<script>
+			onload = function() {
+				var oList = document.getElementById("list");
+				
+				//商品2=$46; 商品3=$47; 商品5=$49; 商品6=$50
+				
+				for (var i=1; i<=6; i++) {
+					var name = "商品" + i;
+					var value = getCookie(name); //从cookie中获取name对应的value
+					console.log("value=" + value);
+					
+					//如果在cookie中存在该商品
+					if (value) { //如果value不为空字符串""
+						
+						var liNode = document.createElement("li"); //li节点
+						liNode.innerHTML = "商品名称: " + name + ", 商品价格:" + value;
+						oList.appendChild(liNode);
+					}
+				}
+				
+				/*
+				 * 空字符串: false, 非空字符串:true
+				 * 0或者NaN: false, 其他非0数字: true
+				 * undefined: false
+				 * null: false, 非null的对象: true
+				 */
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h2>我的购物车</h2>
+		<div><a href="购物车.html">返回购物车</a></div>
+		<ul id="list">
+			
+		</ul>
+	</body>
+</html>

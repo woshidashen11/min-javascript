@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="base.js"></script>
+		<script>
+			onload = function() {
+				var oBox = document.getElementById("box");
+				
+				//先获取cookie
+				var oldLeft = getCookie("left"); //获取cookie中cookie名称为left的值
+				var oldTop = getCookie("top"); //获取cookie中cookie名称为top的值    
+				
+				if (oldLeft) {
+					oBox.style.left = oldLeft; //移动oBox到之前的位置
+					oBox.style.top = oldTop;
+					oBox.innerHTML = "x:" + parseInt(oBox.style.left) + ", y:" + parseInt(oBox.style.top);
+				}
+				
+				//实现拖拽
+				oBox.onmousedown = function(evt) {
+					var oEvent = evt || event;
+					
+					//鼠标和oBox边界的距离
+					var disX = oEvent.clientX -parseInt(oBox.style.left); //oEvent.offsetX;
+					var disY = oEvent.clientY -parseInt(oBox.style.top);//oEvent.offsetY;
+					
+					document.onmousemove = function(evt) {
+						var oEvent = evt || event;
+						
+						//移动oBox
+						oBox.style.left = oEvent.clientX - disX + "px";
+						oBox.style.top = oEvent.clientY - disY + "px";
+						
+						oBox.innerHTML = "x:" + parseInt(oBox.style.left) + ", y:" + parseInt(oBox.style.top);
+					}
+					
+					document.onmouseup = function(){
+						document.onmousemove = null;
+						document.onmouseup = null;
+						
+						var left = oBox.style.left; //10px
+						var top = oBox.style.top; //10px
+						
+						var d = new Date();
+						d.setDate(d.getDate()+10); //10天后的日期
+						document.cookie = "left=" + left + ";expires=" + d;   
+						document.cookie = "top=" + top + ";expires=" + d;
+						console.log(document.cookie);
+						//上面是将left和top保存到cookie中
+					}
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box" style="background: red; width: 100px; height: 100px; position: absolute; left: 10px; top: 10px;">x:10, y:10</div>
+	</body>
+</html>
